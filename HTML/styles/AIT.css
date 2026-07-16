@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    background-color: bisque;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(51, 58, 63, 0.987);
+    margin: 0;
+}
+.AIT-image{
+    padding-left: 40px;
+    padding-right: 171px;
+    width: 180px;
+}
+.nav-bar{
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-bar a{
+    color: white;
+    font-size: 18px;
+    padding-right: 35px;
+    text-decoration: none;
+    margin-right: 0;
+}
+.nav-bar a:hover{
+    color: orangered;
+}
+.images-section{
+    justify-items: center;
+}
+.images-section img{
+    width: 250px;
+    height: 150px;
+    padding: 15px;
+}
+.table-container{
+    display: flex;
+    justify-content: center;
+}
+.table-container table{
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255);
+}
+.table-section{
+    display: flex;
+    justify-content: space-evenly;
+}
+.table-section table tr{
+    text-align: center;
+}
+.table-section table th{
+    color: black;
+    padding: 5px;
+    border: 2px solid rgba(131, 108, 234, 0.941);
+}
+.table-section table td{
+    color: black;
+    padding: 5px;
+    border: 2px solid rgb(103, 234, 214);
+}
+.form-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.footer{
+    margin-top: 25px;
+    background-color: black;
+    color: white;
+    padding: 30px;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-image{
+    display: flex;
+    flex-direction: column;
+}
+.footer-image img{
+    width: 200px;
+    height: 80px;
+}
+.description{
+    color: #bbbaba;
+    font-size: 15px;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 20px;
+}
+.footer-details h3{
+    color: hsl(0, 2%, 51%);
+    font-weight: 700;
+    padding: 10px;
+    margin: 20px;
+    font-family: 'poppins', sans-serif;
+}
+.footer-courses h3{
+    color: hsl(0, 2%, 51%);
+    font-weight: 700;
+    padding: 10px;
+    margin: 20px;
+    font-family: 'poppins', sans-serif;
+}
+.footer-details ul{
+    list-style: circle;
+}
+.footer-courses ul{
+    list-style: circle;
+}
+.footer-details ul li{
+    margin-bottom: 10px;
+}
+.footer-courses ul li{
+    margin-bottom: 10px;
+}
+.footer-details a{
+    color: rgb(242, 239, 239);
+    text-decoration: none;
+    font-size: 15px;
+}
+.footer-details a:hover{
+    color: orangered;
+}
+.footer-courses a{
+    color: rgb(242, 239, 239);
+    text-decoration: none;
+    font-size: 15px;
+}
+.footer-courses a:hover{
+    color: orangered;
+}
+.footer-contact h3{
+    color: hsl(0, 2%, 51%);
+    font-weight: 700;
+    padding: 10px;
+    margin: 20px;
+    font-family: 'poppins', sans-serif;
+}
+.footer-contact p{
+    display: flex;
+    align-items: flex-start;
+    font-size: 15px;
+    color: rgb(227, 225, 225);
+    margin: 15px;
+}

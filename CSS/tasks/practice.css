@@ -1,0 +1,758 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    margin: 20px;
+    background: linear-gradient(to right, hsl(200, 11%, 95%), rgb(237, 233, 191));
+}
+
+/* home */
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+    gap: 70px;
+    /* border: 2px solid; */
+}
+
+#home {
+    padding-left: 28%;
+    margin: 0;
+}
+
+.home {
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(21, 14, 14);
+    padding: 10px;
+    margin-left: 0;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.home:hover {
+    color: aquamarine;
+    background-color: hsla(0, 7%, 24%, 0.805);
+    border: 1px solid rgb(217, 10, 10);
+}
+
+/* adjacent selector */
+#checkbox:checked+p {
+    background-color: black;
+    color: red;
+}
+
+/* hover skip effect on box */
+.box-container {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid red;
+    background-color: aqua;
+    width: 150px;
+    height: 100px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.box-container:not(#skip):hover {
+    border: 2px solid rgb(19, 247, 19);
+    width: 200px;
+    height: 200px;
+    background-color: rgb(70, 65, 236);
+    color: red;
+    box-shadow: 0px 0px 20px rgb(13, 16, 13);
+}
+
+/* hyperlink to top */
+.arrow {
+    font-size: 30px;
+    position: fixed;
+    top: 90%;
+    left: 98%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.arrow a {
+    text-decoration: none;
+    color: black;
+}
+
+.arrow a:hover {
+    color: rgb(236, 234, 234);
+    text-shadow: 1px 1px 10px rgb(174, 227, 18);
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+}
+
+.card {
+    border: 2px solid rgb(227, 37, 205);
+    border-radius: 15px;
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.card-img img {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.card-text {
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-text h2 {
+    color: black;
+}
+
+.card-text:has(input[type='checkbox']) {
+    color: brown;
+}
+
+.card:has(input[type="checkbox"]:checked) h2 {
+    background-color: green;
+    color: yellow;
+}
+
+.card-text:has(input[type='checkbox']:checked) {
+    color: rgb(11, 81, 243);
+}
+
+/* box-sizing */
+.card-container2 {
+    display: flex;
+    margin-top: 15px;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card-content {
+    border: 2px solid red;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.card-content h3 {
+    margin: 0;
+}
+
+.card-content p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px rgb(46, 46, 208);
+}
+
+.btn:hover {
+    padding: 8px;
+    box-shadow: 0px 0px 15px #2e2ed0;
+    cursor: pointer;
+    background-color: #4ad1f3;
+    color: greenyellow;
+    border: 1px solid black;
+}
+
+.card-content h3:hover {
+    text-decoration: underline;
+    color: rgb(49, 46, 46);
+    text-shadow: 1px 1px 10px rgb(174, 227, 18);
+    cursor: pointer;
+}
+
+.card-content p:hover {
+    white-space: normal;
+    overflow: visible;
+}
+
+/* 3D cube */
+.pillar {
+    width: 500px;
+    height: 500px;
+    perspective: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+    /* border: 2px solid black; */
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 10s infinite linear;
+    background-image: url('../ref-web/assets/images/gear-5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cube:hover {
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+.cube-face {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+}
+
+.cube-face.front {
+    transform: translateZ(70px) rotateY(0deg);
+}
+
+.cube-face.back {
+    transform: translateZ(-70px) rotateY(0deg);
+}
+
+.cube-face.right {
+    transform: translateX(70px) rotateY(90deg);
+}
+
+.cube-face.left {
+    transform: translateX(-70px) rotateY(-90deg);
+}
+
+.cube-face.bottom {
+    transform: translateY(70px) rotateX(90deg);
+}
+
+.cube-face.top {
+    transform: translateY(-70px) rotateX(-90deg);
+}
+
+/* rotating box */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: box 8s linear 0s infinite;
+    margin-left: 15px;
+}
+
+.box:hover {
+    animation-play-state: paused;
+}
+
+@keyframes box {
+    0% {
+        background-color: red;
+        border-radius: 0px;
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        background-color: rgb(249, 221, 11);
+        border-radius: 20%;
+        top: 0;
+        left: 1050px;
+    }
+
+    50% {
+        background-color: rgb(132, 255, 0);
+        border-radius: 50%;
+        top: 400px;
+        left: 1050px;
+    }
+
+    75% {
+        background-color: rgb(0, 255, 251);
+        border-radius: 20%;
+        top: 400px;
+        left: 0;
+    }
+
+    100% {
+        background-color: rgb(234, 0, 255);
+        border-radius: 0px;
+        top: 0;
+        left: 0;
+    }
+}
+
+/* Tooltip */
+.tooltip {
+    visibility: hidden;
+    background-color: rgba(21, 255, 0, 0.846);
+    padding: 3px;
+    border-radius: 10px;
+    position: absolute;
+    top: -60px;
+    color: rgb(0, 0, 0);
+}
+
+.tip {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(21, 255, 0, 0.846);
+    rotate: 45deg;
+    margin: 0 auto;
+    position: relative;
+    top: 7px;
+}
+
+.box:hover .tooltip {
+    visibility: visible;
+}
+
+/* super mario */
+.mario {
+    border-top: 2px solid;
+    width: 400px;
+    height: 300px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brick-box {
+    width: 70px;
+    height: 50px;
+    background-image: url('https://www.citypng.com/public/uploads/preview/super-mario-yellow-mystery-box-png-733961695032826ztkkrtvtti.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    position: relative;
+}
+
+.coin {
+    background-image: url('https://p.turbosquid.com/ts-thumb/Xu/0Hholt/T5f2Zx4N/front_view/png/1572820248/1920x1080/fit_q87/c44fe9963c8df44ec97b9777da382968d31030ed/front_view.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    animation: coin 2s linear 1s infinite;
+}
+
+.coin:hover {
+    animation-play-state: paused;
+}
+
+@keyframes coin {
+    0% {
+        top: 0;
+        transform: rotateX(0deg) translateX(-50%);
+        opacity: 1;
+    }
+
+    25% {
+        top: -70px;
+        transform: rotateX(180deg) translateX(-50%);
+        opacity: 1;
+    }
+
+    50% {
+        top: -165px;
+        transform: rotateX(270deg) translateX(-50%);
+        opacity: 0.2;
+    }
+
+    75% {
+        top: -165px;
+        transform: rotateX(360deg) translateX(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        top: -165px;
+        opacity: 0;
+        transform: rotateX(0deg) translateX(-50%);
+    }
+}
+
+/* Indian Flag */
+.flag {
+    border: 2px solid black;
+    width: 400px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px blue;
+}
+
+.stripes {
+    height: 83px;
+}
+
+.stripes.top {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    background-color: rgb(243, 162, 11);
+}
+
+.stripes.middle {
+    background-color: white;
+}
+
+.stripes.bottom {
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    background-color: rgb(28, 245, 67);
+}
+
+.chakara {
+    width: 15%;
+    height: 70%;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 110, 255);
+    margin: 7px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: rot 4s linear 0s infinite;
+}
+
+.chakara:hover {
+    animation-play-state: paused;
+}
+
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.wheel {
+    position: absolute;
+}
+
+.wheel.w1 {
+    /* background-color: blue; */
+    border: 1px solid blue;
+    width: 60px;
+    transform: rotate(0deg);
+}
+
+.wheel.w2 {
+    /* background-color: blue; */
+    border: 1px solid blue;
+    width: 60px;
+    transform: rotate(15deg);
+}
+
+.wheel.w3 {
+    /* background-color: blue; */
+    border: 1px solid blue;
+    width: 59px;
+    transform: rotate(30deg);
+}
+
+.wheel.w4 {
+    /* background-color: blue; */
+    border: 1px solid blue;
+    width: 59px;
+    transform: rotate(45deg);
+}
+
+.wheel.w5 {
+    /* background-color: blue; */
+    border: 1px solid blue;
+    width: 59px;
+    transform: rotate(60deg);
+}
+
+.wheel.w6 {
+    /* background-color: blue; */
+    border: 1px solid blue;
+    width: 60px;
+    transform: rotate(75deg);
+}
+
+.wheel.w7 {
+    background-color: blue;
+    border: 1px solid blue;
+    width: 60px;
+    transform: rotate(90deg);
+}
+
+.wheel.w8 {
+    background-color: blue;
+    border: 1px solid blue;
+    width: 60px;
+    transform: rotate(105deg);
+}
+
+.wheel.w9 {
+    background-color: blue;
+    border: 1px solid blue;
+    width: 60px;
+    transform: rotate(120deg);
+}
+
+.wheel.w10 {
+    background-color: blue;
+    border: 1px solid blue;
+    width: 60px;
+    transform: rotate(135deg);
+}
+
+.wheel.w11 {
+    background-color: blue;
+    border: 1px solid blue;
+    width: 60px;
+    transform: rotate(150deg);
+}
+
+.wheel.w12 {
+    background-color: blue;
+    border: 1px solid blue;
+    width: 60px;
+    transform: rotate(165deg);
+}
+
+/* traffic lights */
+.traffic-signals {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 70px;
+    background-color: black;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+
+.signal {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.signal.red {
+    background-color: rgb(124, 3, 3);
+    animation: red 3s linear 0s 1;
+}
+
+.signal.yellow {
+    background-color: rgb(113, 113, 5);
+    animation: y 2s linear 3s 1;
+}
+
+.signal.green {
+    background-color: rgb(3, 116, 3);
+    animation: g 8s linear 6s 1;
+}
+
+@keyframes red {
+    0% {
+        background-color: rgb(124, 3, 3);
+    }
+
+    25% {
+        background-color: rgb(157, 5, 5);
+    }
+
+    50% {
+        background-color: rgb(255, 0, 0);
+    }
+
+    75% {
+        background-color: rgb(92, 5, 5);
+    }
+
+    100% {
+        background-color: rgb(124, 3, 3);
+    }
+
+}
+
+@keyframes y {
+    0% {
+        background-color: rgb(113, 113, 5);
+    }
+
+    25% {
+        background-color: rgb(171, 147, 6);
+    }
+
+    50% {
+        background-color: rgb(255, 225, 0);
+    }
+
+    75% {
+        background-color: rgb(163, 158, 6);
+    }
+
+    100% {
+        background-color: rgb(113, 113, 5);
+    }
+
+}
+
+@keyframes g {
+    0% {
+        background-color: rgb(3, 116, 3);
+    }
+
+    25% {
+        background-color: rgb(111, 255, 0);
+    }
+
+    50% {
+        background-color: rgb(60, 255, 6);
+    }
+
+    75% {
+        background-color: rgb(33, 222, 4);
+    }
+
+    100% {
+        background-color: rgb(1, 255, 1);
+        animation-play-state: paused;
+    }
+
+}
+
+.bikes {
+    height: 250px;
+    font-size: 30px;
+    margin: 10px auto;
+    gap: 10px;
+    /* background-image: url('https://static.vecteezy.com/system/resources/previews/008/888/451/original/horizontal-view-of-asphalt-road-with-bike-lense-background-of-trees-and-green-grass-with-puddle-and-mountain-under-the-blue-sky-vector.jpg'); */
+    /* background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    overflow-x: hidden;
+    padding-left: 100px;
+    /* background-color: azure; */
+}
+
+.bike1 {
+    animation: move 5s linear 7s alternate 1;
+}
+
+.bike2 {
+    animation: move 8s ease-out 7s alternate 1;
+}
+
+.bike3 {
+    animation: move 4s ease-in 7s alternate 1;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(1000px);
+    }
+}
+
+/* scroll behaviour */
+.scroll-b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-content {
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+    overflow: scroll;
+    width: 50%;
+    height: 500px;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.scroll-content video {
+    min-width: 100%;
+    min-height: 500px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    /* margin: 2%; */
+}
