@@ -756,3 +756,133 @@ body {
     scroll-snap-stop: always;
     /* margin: 2%; */
 }
+
+/* chess board */
+
+.chess-board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 2px solid black;
+    width: fit-content;
+    place-content: center;
+    margin: 20px auto;
+    overflow: visible;
+    /* icon must fly outside its cell — visible lets it cross cell borders */
+    transform: rotate(90deg);
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.cell:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.cell:nth-child(even) {
+    background-color: #000000;
+}
+
+.row:nth-child(even) .cell:nth-child(odd) {
+    background-color: #000000;
+}
+
+.row:nth-child(even) .cell:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* center icons inside each cell */
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    position: relative;
+    /* lets z-index work so moving pieces render on top */
+    z-index: 0;
+}
+
+/* FA Kit converts <i> to <svg> — so we must target svg, not i */
+
+/* black pieces — solid black fill with bright white outline so visible on both dark & light squares */
+.black-piece svg {
+    width: 32px;
+    height: 32px;
+    transform: rotate(-90deg);
+    /* counter-rotate: board is +90deg, icon goes -90deg = upright */
+    fill: #111111;
+    filter:
+        drop-shadow(0px 0px 1px #fff) drop-shadow(1px 0px 0px #fff) drop-shadow(-1px 0px 0px #fff) drop-shadow(0px 1px 0px #fff) drop-shadow(0px -1px 0px #fff);
+}
+
+/* white pieces — bright white, with dark shadow so visible on black squares too */
+.white-piece svg {
+    width: 32px;
+    height: 32px;
+    transform: rotate(-90deg);
+    /* counter-rotate: board is +90deg, icon goes -90deg = upright */
+    fill: #ffffff;
+    filter:
+        drop-shadow(1px 1px 0px rgba(255, 252, 252, 0.9)) drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.8)) drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.6));
+}
+
+/* =============================================
+   CHESS PAWN ANIMATIONS — pure CSS, no JS
+
+   Board is rotate(90deg), so the board's coordinate axes are:
+     board-X = screen DOWN  |  board-Y = screen LEFT
+
+   SVG has rotate(-90deg), so the SVG's local axes become:
+     svg-X = screen RIGHT   |  svg-Y = screen DOWN
+
+   So inside the SVG's coordinate system:
+     translateX(+n) = rightward on screen = WHITE moves forward
+     translateX(-n) = leftward  on screen = BLACK moves forward
+
+   Animation is applied to the SVG (not the div), so the
+   cell background square stays fixed. overflow:visible on
+   the board lets the icon travel across cell boundaries.
+   ============================================= */
+
+/* White pawn: 2 boxes forward = 2 × 60px = 120px — moves UP on screen */
+@keyframes white-pawn-move {
+    from {
+        transform: rotate(-90deg) translateY(0);
+    }
+
+    to {
+        transform: rotate(-90deg) translateY(-120px);
+    }
+}
+
+/* Black pawn: 1 box forward = 1 × 60px = 60px — moves UP on screen (toward white) */
+@keyframes black-pawn-move {
+    from {
+        transform: rotate(-90deg) translateY(0);
+    }
+
+    to {
+        transform: rotate(-90deg) translateY(60px);
+    }
+}
+
+/* Lift the pawn cells above neighbours so the piece travels OVER, not under, adjacent cells */
+#white-e-pawn,
+#black-e-pawn {
+    z-index: 10;
+}
+
+/* White moves first — animate the SVG, NOT the div
+   delay 0.8s + duration 0.7s = ends at 1.5s */
+#white-e-pawn svg {
+    animation: white-pawn-move 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards;
+}
+
+/* Black moves after white finishes
+   white_delay(0.8) + white_duration(0.7) + pause(0.3) = 1.8s */
+#black-e-pawn svg {
+    animation: black-pawn-move 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.8s forwards;
+}
