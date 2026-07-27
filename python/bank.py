@@ -21,6 +21,7 @@ if uname == username and pas == password:
             4. Exit
         ''')
         choice = int(input("Enter option from above: "))
+        print()
         match choice:
             case 1:
                 Damount = int(input("Enter the deposite amount: "))
