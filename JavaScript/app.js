@@ -47,10 +47,10 @@
 // block of code
 // }
 
-// when you have more than one condition to check you can use if else if 
+// when you have more than one condition to check you can use if else if
 
 // switch (variable/expression){
-// case 1: 
+// case 1:
 // block of code
 // break
 // case 2:
@@ -91,27 +91,130 @@
 //  do while loop runs once and checks the condition and stops if it becomes false, mostly used in ATM pages
 
 
-const password = "Hemasai@123";
+// const password = "Hemasai@123";
 
-let userPassword = "";
+// let userPassword = "";
 
-let attempts = 0;
+// let attempts = 0;
 
-const maxAttempts = 5;
-while (attempts < maxAttempts) {
-    userPassword = prompt("Enter password: ");
+// const maxAttempts = 5;
+// while (attempts < maxAttempts) {
+//     userPassword = prompt("Enter password: ");
 
-    if (userPassword === password) {
-        console.log("login success");
-        break;
-    }
-    else {
-        console.log("invalid password");
-        console.log(`Remaining attempts: ${maxAttempts - attempts - 1}`);
-    }
-    attempts++;
-}
+//     if (userPassword === password) {
+//         console.log("login success");
+//         break;
+//     }
+//     else {
+//         console.log("invalid password");
+//         console.log(`Remaining attempts: ${maxAttempts - attempts - 1}`);
+//     }
+//     attempts++;
+// }
 
-if (attempts === maxAttempts) {
-    console.log("account locked!!");
-}
+// if (attempts === maxAttempts) {
+//     console.log("account locked!!");
+// }
+
+
+
+// for in
+//  the loop is used on objects
+
+// const car = {
+//     "brand": "BMW",
+//     "model": "M5",
+//     "year": 2024
+// }
+
+// for (const key in car) {
+//     console.log(key, car[key]);
+// }
+
+// // for of
+// //  the loop is used on arrays
+// const number = [1, 2, 3, 4, 5]
+
+// for (const key of number) {
+//     console.log(key);
+// }
+
+
+
+//  function
+// function is a block of code that can be reusable and perform its task, we write once and call the function whenever we need it instead of writing the code again
+
+// function declaration
+// function message() {
+//     console.log("hello world");
+// }
+// message();
+
+
+// // function expression or anonymous function
+// const display = function () {    //with out a name we can't call the function so we assign this anonymous function to varible
+//     console.log("this is a function expression!!");
+// }
+// display();
+
+// //  arrow function
+// const greet = () => { //this is also a anonymos function and it is a shorter way of writing the function and assigned to a varible
+//     console.log("Good morning!,This message was from arrow function");
+// }
+// greet();
+
+
+
+// // IIFE (Immediately Invoked Function Expression) or self-invoking function
+// // this function executes immediately after the function created.
+
+// (function () {
+//     console.log("this is a IIFE function ran immediately after declaration");
+// })();
+
+
+// // callback function
+// //  callback function is a function that passed as a argument to another function that called after the task is completed.
+
+// function function1() {
+//     console.log("this is a callback function!!");
+// }
+
+// let callBack = (callback) => {
+//     console.log("this is before callback");
+//     callback();
+//     console.log("this is after the callback");
+// }
+
+// callBack(function1);
+
+// // function with the parameters
+// // parameters are the values recvied to the function
+
+// // and arguments are the values passed to function while calling it
+
+// function sayHello(name) { // the variables inside () are called parameters
+//     console.log("Hello " + name);
+// }
+// sayHello("Hemasai"); // the value inside () is called arguments
+
+// const addNum = function (num1, num2) {
+//     console.log(num1 + num2);
+// }
+// addNum(4, 100);
+
+// const subNum = (num1, num2) => {
+//     console.log(num1 - num2);
+// }
+// subNum(10, 4);
+
+
+
+// // function with return statements
+// //  return is used to send back a value to the caller and it can be stored in variable to use it later
+
+// let RF = (name) => {
+//     return `Hello ${name}`;
+// }
+// let result = RF("Hemasai");
+// console.log(result);
