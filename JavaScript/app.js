@@ -173,6 +173,9 @@
 // })();
 
 
+// IIFE with parameters
+// ((user) => console.log(`hello ${user}`))("hemasai");
+
 // // callback function
 // //  callback function is a function that passed as a argument to another function that called after the task is completed.
 
