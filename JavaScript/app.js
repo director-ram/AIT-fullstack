@@ -221,3 +221,101 @@
 // }
 // let result = RF("Hemasai");
 // console.log(result);
+
+
+
+// practice program with functions
+
+
+// function later(){
+//     console.log(`The program is executed after the primary program started executed then it called the callback function!`);
+// }
+
+// ((name, callback) => {
+//     console.log(`Hello welcome to my world ${name}!`);
+//     callback();
+// })("hemasai", later);
+
+
+
+//  Strings
+
+const sentence = "   I love javascript";
+
+console.log(`Original sentence: ${sentence}`)
+// string properties
+
+console.log(sentence.length); // properties doesnt req '()', here length is a prop
+
+// string methods
+
+console.log(sentence.toLowerCase()); // method req '()', () represents function call, it converts to lowercase
+console.log(sentence.toUpperCase()); // converts to uppercase
+console.log(sentence.trim()); // it removes the white spaces from start and end. it also has two more trimStart() and trimEnd().
+
+
+//  checking start/end
+console.log(sentence.startsWith("I")); // if the condition is true it returns true otherwise false
+console.log(sentence.endsWith("javascript")); // if the condition is true it returns true otherwise false
+
+
+//  extraction methods
+console.log(sentence.slice(3, 8)); // it returns the sliced string, we have to enter two arug.
+console.log(sentence.substring(3, 6)); // it returns the substring
+console.log(sentence.substr(3, 6)); // it returns the substring but it is deprecated.
+
+
+// replacing strings
+
+const sentence2 = sentence.trim().replace("javascript", "Python"); // writing two methods with a dot is call method chaining, and replace method is case sensitive and it replace the first occurance.
+console.log(sentence2);
+
+const sentence3 = sentence.replaceAll("I", "We"); // replaces all occurences
+console.log(sentence3);
+
+//using regex
+console.log(sentence.replace(/javascript/g, "python"));
+
+
+
+// searching methods
+
+console.log(sentence.search("javascript")); // for search regex can be used
+
+console.log(sentence.includes("javascript")); // if the condition is true it returns true otherwise false
+console.log(sentence.indexOf("javascript")); // if the condition is true it returns the index otherwise false
+console.log(sentence.lastIndexOf("love")); // if the condition is true it returns the index otherwise false
+
+
+
+// splitting
+
+const sentence4 = sentence.trim().split(" ");
+console.log(sentence4); // it splits the string into an array
+
+
+
+// string concatination
+
+// there are two ways to do it
+
+// using concat
+let result = sentence.trim().concat(" and python.");
+console.log(result);
+
+// using template literals
+let literal = `${sentence} and python`;
+console.log(literal);
+
+
+
+// character access
+
+console.log(sentence.charAt(5)); // returns the character at the specified index
+console.log(sentence.charCodeAt(6)); // returns the unicode of the character
+
+
+
+//  repeating strings
+
+console.log("Hemasai".repeat(4));
