@@ -240,82 +240,143 @@
 
 //  Strings
 
-const sentence = "   I love javascript";
+// const sentence = "   I love javascript";
 
-console.log(`Original sentence: ${sentence}`)
-// string properties
+// console.log(`Original sentence: ${sentence}`)
+// // string properties
 
-console.log(sentence.length); // properties doesnt req '()', here length is a prop
+// console.log(sentence.length); // properties doesnt req '()', here length is a prop
 
-// string methods
+// // string methods
 
-console.log(sentence.toLowerCase()); // method req '()', () represents function call, it converts to lowercase
-console.log(sentence.toUpperCase()); // converts to uppercase
-console.log(sentence.trim()); // it removes the white spaces from start and end. it also has two more trimStart() and trimEnd().
-
-
-//  checking start/end
-console.log(sentence.startsWith("I")); // if the condition is true it returns true otherwise false
-console.log(sentence.endsWith("javascript")); // if the condition is true it returns true otherwise false
+// console.log(sentence.toLowerCase()); // method req '()', () represents function call, it converts to lowercase
+// console.log(sentence.toUpperCase()); // converts to uppercase
+// console.log(sentence.trim()); // it removes the white spaces from start and end. it also has two more trimStart() and trimEnd().
 
 
-//  extraction methods
-console.log(sentence.slice(3, 8)); // it returns the sliced string, we have to enter two arug.
-console.log(sentence.substring(3, 6)); // it returns the substring
-console.log(sentence.substr(3, 6)); // it returns the substring but it is deprecated.
+// //  checking start/end
+// console.log(sentence.startsWith("I")); // if the condition is true it returns true otherwise false
+// console.log(sentence.endsWith("javascript")); // if the condition is true it returns true otherwise false
 
 
-// replacing strings
-
-const sentence2 = sentence.trim().replace("javascript", "Python"); // writing two methods with a dot is call method chaining, and replace method is case sensitive and it replace the first occurance.
-console.log(sentence2);
-
-const sentence3 = sentence.replaceAll("I", "We"); // replaces all occurences
-console.log(sentence3);
-
-//using regex
-console.log(sentence.replace(/javascript/g, "python"));
+// //  extraction methods
+// console.log(sentence.slice(3, 8)); // it returns the sliced string, we have to enter two arug.
+// console.log(sentence.substring(3, 6)); // it returns the substring
+// console.log(sentence.substr(3, 6)); // it returns the substring but it is deprecated.
 
 
+// // replacing strings
 
-// searching methods
+// const sentence2 = sentence.trim().replace("javascript", "Python"); // writing two methods with a dot is call method chaining, and replace method is case sensitive and it replace the first occurance.
+// console.log(sentence2);
 
-console.log(sentence.search("javascript")); // for search regex can be used
+// const sentence3 = sentence.replaceAll("I", "We"); // replaces all occurences
+// console.log(sentence3);
 
-console.log(sentence.includes("javascript")); // if the condition is true it returns true otherwise false
-console.log(sentence.indexOf("javascript")); // if the condition is true it returns the index otherwise false
-console.log(sentence.lastIndexOf("love")); // if the condition is true it returns the index otherwise false
+// //using regex
+// console.log(sentence.replace(/javascript/g, "python"));
 
 
 
-// splitting
+// // searching methods
 
-const sentence4 = sentence.trim().split(" ");
-console.log(sentence4); // it splits the string into an array
+// console.log(sentence.search("javascript")); // for search regex can be used
+
+// console.log(sentence.includes("javascript")); // if the condition is true it returns true otherwise false
+// console.log(sentence.indexOf("javascript")); // if the condition is true it returns the index otherwise false
+// console.log(sentence.lastIndexOf("love")); // if the condition is true it returns the index otherwise false
 
 
 
-// string concatination
+// // splitting
 
-// there are two ways to do it
+// const sentence4 = sentence.trim().split(" ");
+// console.log(sentence4); // it splits the string into an array
 
-// using concat
-let result = sentence.trim().concat(" and python.");
+
+
+// // string concatination
+
+// // there are two ways to do it
+
+// // using concat
+// let result = sentence.trim().concat(" and python.");
+// console.log(result);
+
+// // using template literals
+// let literal = `${sentence} and python`;
+// console.log(literal);
+
+
+
+// // character access
+
+// console.log(sentence.charAt(5)); // returns the character at the specified index
+// console.log(sentence.charCodeAt(6)); // returns the unicode of the character
+
+
+
+// //  repeating strings
+
+// console.log("Hemasai".repeat(4));
+
+
+
+
+// Array methods
+
+// let num = [];  // this is array declaration
+
+
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+
+console.log(nums.pop()); // pop is used to remove the last element
+console.log(nums.push(10)); // push is used to add element at end
+console.log(nums.shift()); // shift is used to remove the first element
+console.log(nums.unshift(0)); // unshift is used to add element at start
+let result = nums.slice(2, 5);  // slice is used to get the sliced array, it doesn't modify the original array
 console.log(result);
+console.log(nums.splice(2, 5)); // splice is used to remove and add elements, it modifies the original array
+console.log(nums.includes(8)); // includes is used to check the value is in array or not and it returns boolean
+console.log(nums.indexOf(8)); // indexOf is used to find the index of the element
 
-// using template literals
-let literal = `${sentence} and python`;
-console.log(literal);
+// find method
+console.log(nums.find((num) => num > 5)); // find is used to find the element based on the condition
+
+// foreach method
+nums.forEach((num) => console.log(num)); // foreach is used to iterate through the array
+
+// filter method
+let result2 = nums.filter((num) => { return num > 6 });
+console.log(result2); // filter is used to filter the array based on the condition
+
+// map method
+let result3 = nums.map((num) => {
+    return num * 2;
+});
+console.log(result3); // map is used to transform the array
 
 
+// sort method
+// sort method works differently for numbers and alphabets
+let alpha = ["Hemasai", "Varun", "Dhoni"];
+console.log(alpha.sort()); //for alphabets
 
-// character access
-
-console.log(sentence.charAt(5)); // returns the character at the specified index
-console.log(sentence.charCodeAt(6)); // returns the unicode of the character
+let numeric = [1, 2, 5, 8, 56, 97, 12, 3];
+console.log(numeric.sort((a, b) => a - b)); // for numeric values
 
 
+// reverse method
+console.log(nums.reverse()); // reverse the entire array
 
-//  repeating strings
 
-console.log("Hemasai".repeat(4));
+// reduce method
+let result4 = nums.reduce((total, num) => {
+    return total + num;
+}, 0);
+console.log(result4); // reduce is used to make array into single value
+
+
+// join mehtod
+console.log(alpha.join(",")); // join is used to convert array into string with a specified seprator, here it is comma
