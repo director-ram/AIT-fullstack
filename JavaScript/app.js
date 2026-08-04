@@ -328,55 +328,225 @@
 // let num = [];  // this is array declaration
 
 
-let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 
-console.log(nums.pop()); // pop is used to remove the last element
-console.log(nums.push(10)); // push is used to add element at end
-console.log(nums.shift()); // shift is used to remove the first element
-console.log(nums.unshift(0)); // unshift is used to add element at start
-let result = nums.slice(2, 5);  // slice is used to get the sliced array, it doesn't modify the original array
-console.log(result);
-console.log(nums.splice(2, 5)); // splice is used to remove and add elements, it modifies the original array
-console.log(nums.includes(8)); // includes is used to check the value is in array or not and it returns boolean
-console.log(nums.indexOf(8)); // indexOf is used to find the index of the element
+// console.log(nums.pop()); // pop is used to remove the last element
+// console.log(nums.push(10)); // push is used to add element at end
+// console.log(nums.shift()); // shift is used to remove the first element
+// console.log(nums.unshift(0)); // unshift is used to add element at start
+// let result = nums.slice(2, 5);  // slice is used to get the sliced array, it doesn't modify the original array
+// console.log(result);
+// console.log(nums.splice(2, 5)); // splice is used to remove and add elements, it modifies the original array
+// console.log(nums.includes(8)); // includes is used to check the value is in array or not and it returns boolean
+// console.log(nums.indexOf(8)); // indexOf is used to find the index of the element
 
-// find method
-console.log(nums.find((num) => num > 5)); // find is used to find the element based on the condition
+// // find method
+// console.log(nums.find((num) => num > 5)); // find is used to find the element based on the condition
 
-// foreach method
-nums.forEach((num) => console.log(num)); // foreach is used to iterate through the array
+// // foreach method
+// nums.forEach((num) => console.log(num)); // foreach is used to iterate through the array
 
-// filter method
-let result2 = nums.filter((num) => { return num > 6 });
-console.log(result2); // filter is used to filter the array based on the condition
+// // filter method
+// let result2 = nums.filter((num) => { return num > 6 });
+// console.log(result2); // filter is used to filter the array based on the condition
+
+// // map method
+// let result3 = nums.map((num) => {
+//     return num * 2;
+// });
+// console.log(result3); // map is used to transform the array
+
+
+// // sort method
+// // sort method works differently for numbers and alphabets
+// let alpha = ["Hemasai", "Varun", "Dhoni"];
+// console.log(alpha.sort()); //for alphabets
+
+// let numeric = [1, 2, 5, 8, 56, 97, 12, 3];
+// console.log(numeric.sort((a, b) => a - b)); // for numeric values
+
+
+// // reverse method
+// console.log(nums.reverse()); // reverse the entire array
+
+
+// // reduce method
+// let result4 = nums.reduce((total, num) => {
+//     return total + num;
+// }, 0);
+// console.log(result4); // reduce is used to make array into single value
+
+
+// // join mehtod
+// console.log(alpha.join(",")); // join is used to convert array into string with a specified seprator, here it is comma
+
+
+// practice
+
+const orders = [
+    {
+        orderId: 1,
+        customer: {
+            name: 'Hemasai',
+            age: 21,
+            email: "khemasai413@gmail.com",
+            gender: "Male",
+        },
+        items: [
+            {
+                itemId: "AVIQ7p",
+                itemName: "Iqoo neo 7 pro",
+                price: 30000,
+                quantity: 1,
+            },
+            {
+                itemId: "FSM53",
+                itemName: "Samsung M53",
+                price: 50000,
+                quantity: 2,
+            }
+        ],
+        address: {
+            country: "India",
+            state: "Andhra Pradesh",
+            district: "Krishna",
+            city: "Gudivada",
+            pincode: 521301,
+        }
+    },
+
+    {
+        orderId: 2,
+        customer: {
+            name: 'Varun',
+            age: 35,
+            email: "varunG123@gmail.com",
+            gender: "Male",
+        },
+        items: [
+            {
+                itemId: "AaI15pm",
+                itemName: "Iphone 15 pro max",
+                price: 100000,
+                quantity: 1,
+            },
+            {
+                itemId: "ASGs23",
+                itemName: "Samsung S23 Ultra",
+                price: 120000,
+                quantity: 2,
+            }
+        ],
+        address: {
+            country: "India",
+            state: "Andhra Pradesh",
+            district: "Guntur",
+            city: "Tenali",
+            pincode: 522201,
+        }
+    },
+
+    {
+        orderId: 3,
+        customer: {
+            name: 'Dhoni',
+            age: 42,
+            email: "DhoniKorea@gmail.com",
+            gender: "Male",
+        },
+        items: [
+            {
+                itemId: "AXRpx6P",
+                itemName: "Redmi poco X6 pro",
+                price: 25000,
+                quantity: 1,
+            },
+            {
+                itemId: "ASG7S67",
+                itemName: "Realme GT 6T",
+                price: 30000,
+                quantity: 1,
+            }
+        ],
+        address: {
+            country: "India",
+            state: "Andhra Pradesh",
+            district: "Chittor",
+            city: "Chittoor",
+            pincode: 517001,
+        }
+    },
+
+    {
+        orderId: 4,
+        customer: {
+            name: 'Nateesha',
+            age: 50,
+            email: "Nateesha@gmail.com",
+            gender: "Female",
+        },
+        items: [
+            {
+                itemId: "FVy50",
+                itemName: "Vivo Y50",
+                price: 150000,
+                quantity: 1,
+            },
+            {
+                itemId: "OR50",
+                itemName: "Oppo reno 50",
+                price: 25000,
+                quantity: 1,
+            }
+        ],
+        address: {
+            country: "India",
+            state: "Andhra Pradesh",
+            district: "East Godavari",
+            city: "Rajahmundry",
+            pincode: 533101,
+        }
+    },
+
+    {
+        orderId: 5,
+        customer: {
+            name: 'Madhu',
+            age: 25,
+            email: "[EMAIL_ADDRESS]",
+            gender: "Male",
+        },
+        items: [
+            {
+                itemId: "FRGt6t",
+                itemName: "Realme GT 6T",
+                price: 30000,
+                quantity: 1,
+            },
+            {
+                itemId: "ONCE4",
+                itemName: "OnePlus nord CE 4",
+                price: 24999,
+                quantity: 2,
+            }
+        ],
+        address: {
+            country: "India",
+            state: "Tamil Nadu",
+            district: "Chennai",
+            city: "Chennai",
+            pincode: 600001,
+        }
+    }
+];
+
 
 // map method
-let result3 = nums.map((num) => {
-    return num * 2;
+const summaries = orders.map((order) => {
+    const totalPrice = order.items.reduce((acc, item) => { return acc + item.price * item.quantity }, 0)
+
+    return `${order.customer.name} placed total orders of ${order.items.length} worth of ₹${totalPrice}`
 });
-console.log(result3); // map is used to transform the array
 
-
-// sort method
-// sort method works differently for numbers and alphabets
-let alpha = ["Hemasai", "Varun", "Dhoni"];
-console.log(alpha.sort()); //for alphabets
-
-let numeric = [1, 2, 5, 8, 56, 97, 12, 3];
-console.log(numeric.sort((a, b) => a - b)); // for numeric values
-
-
-// reverse method
-console.log(nums.reverse()); // reverse the entire array
-
-
-// reduce method
-let result4 = nums.reduce((total, num) => {
-    return total + num;
-}, 0);
-console.log(result4); // reduce is used to make array into single value
-
-
-// join mehtod
-console.log(alpha.join(",")); // join is used to convert array into string with a specified seprator, here it is comma
+console.log(summaries);
