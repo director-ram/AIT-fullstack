@@ -384,169 +384,179 @@
 
 // practice
 
-const orders = [
-    {
-        orderId: 1,
-        customer: {
-            name: 'Hemasai',
-            age: 21,
-            email: "khemasai413@gmail.com",
-            gender: "Male",
-        },
-        items: [
-            {
-                itemId: "AVIQ7p",
-                itemName: "Iqoo neo 7 pro",
-                price: 30000,
-                quantity: 1,
-            },
-            {
-                itemId: "FSM53",
-                itemName: "Samsung M53",
-                price: 50000,
-                quantity: 2,
-            }
-        ],
-        address: {
-            country: "India",
-            state: "Andhra Pradesh",
-            district: "Krishna",
-            city: "Gudivada",
-            pincode: 521301,
-        }
-    },
+// const orders = [
+//     {
+//         orderId: 1,
+//         customer: {
+//             name: 'Hemasai',
+//             age: 21,
+//             email: "khemasai413@gmail.com",
+//             gender: "Male",
+//         },
+//         items: [
+//             {
+//                 itemId: "AVIQ7p",
+//                 itemName: "Iqoo neo 7 pro",
+//                 price: 30000,
+//                 quantity: 1,
+//             },
+//             {
+//                 itemId: "FSM53",
+//                 itemName: "Samsung M53",
+//                 price: 50000,
+//                 quantity: 2,
+//             }
+//         ],
+//         address: {
+//             country: "India",
+//             state: "Andhra Pradesh",
+//             district: "Krishna",
+//             city: "Gudivada",
+//             pincode: 521301,
+//         }
+//     },
 
-    {
-        orderId: 2,
-        customer: {
-            name: 'Varun',
-            age: 35,
-            email: "varunG123@gmail.com",
-            gender: "Male",
-        },
-        items: [
-            {
-                itemId: "AaI15pm",
-                itemName: "Iphone 15 pro max",
-                price: 100000,
-                quantity: 1,
-            },
-            {
-                itemId: "ASGs23",
-                itemName: "Samsung S23 Ultra",
-                price: 120000,
-                quantity: 2,
-            }
-        ],
-        address: {
-            country: "India",
-            state: "Andhra Pradesh",
-            district: "Guntur",
-            city: "Tenali",
-            pincode: 522201,
-        }
-    },
+//     {
+//         orderId: 2,
+//         customer: {
+//             name: 'Varun',
+//             age: 35,
+//             email: "varunG123@gmail.com",
+//             gender: "Male",
+//         },
+//         items: [
+//             {
+//                 itemId: "AaI15pm",
+//                 itemName: "Iphone 15 pro max",
+//                 price: 100000,
+//                 quantity: 1,
+//             },
+//             {
+//                 itemId: "ASGs23",
+//                 itemName: "Samsung S23 Ultra",
+//                 price: 120000,
+//                 quantity: 2,
+//             }
+//         ],
+//         address: {
+//             country: "India",
+//             state: "Andhra Pradesh",
+//             district: "Guntur",
+//             city: "Tenali",
+//             pincode: 522201,
+//         }
+//     },
 
-    {
-        orderId: 3,
-        customer: {
-            name: 'Dhoni',
-            age: 42,
-            email: "DhoniKorea@gmail.com",
-            gender: "Male",
-        },
-        items: [
-            {
-                itemId: "AXRpx6P",
-                itemName: "Redmi poco X6 pro",
-                price: 25000,
-                quantity: 1,
-            },
-            {
-                itemId: "ASG7S67",
-                itemName: "Realme GT 6T",
-                price: 30000,
-                quantity: 1,
-            }
-        ],
-        address: {
-            country: "India",
-            state: "Andhra Pradesh",
-            district: "Chittor",
-            city: "Chittoor",
-            pincode: 517001,
-        }
-    },
+//     {
+//         orderId: 3,
+//         customer: {
+//             name: 'Dhoni',
+//             age: 42,
+//             email: "DhoniKorea@gmail.com",
+//             gender: "Male",
+//         },
+//         items: [
+//             {
+//                 itemId: "AXRpx6P",
+//                 itemName: "Redmi poco X6 pro",
+//                 price: 25000,
+//                 quantity: 1,
+//             },
+//             {
+//                 itemId: "ASG7S67",
+//                 itemName: "Realme GT 6T",
+//                 price: 30000,
+//                 quantity: 1,
+//             }
+//         ],
+//         address: {
+//             country: "India",
+//             state: "Andhra Pradesh",
+//             district: "Chittor",
+//             city: "Chittoor",
+//             pincode: 517001,
+//         }
+//     },
 
-    {
-        orderId: 4,
-        customer: {
-            name: 'Nateesha',
-            age: 50,
-            email: "Nateesha@gmail.com",
-            gender: "Female",
-        },
-        items: [
-            {
-                itemId: "FVy50",
-                itemName: "Vivo Y50",
-                price: 150000,
-                quantity: 1,
-            },
-            {
-                itemId: "OR50",
-                itemName: "Oppo reno 50",
-                price: 25000,
-                quantity: 1,
-            }
-        ],
-        address: {
-            country: "India",
-            state: "Andhra Pradesh",
-            district: "East Godavari",
-            city: "Rajahmundry",
-            pincode: 533101,
-        }
-    },
+//     {
+//         orderId: 4,
+//         customer: {
+//             name: 'Nateesha',
+//             age: 50,
+//             email: "Nateesha@gmail.com",
+//             gender: "Female",
+//         },
+//         items: [
+//             {
+//                 itemId: "FVy50",
+//                 itemName: "Vivo Y50",
+//                 price: 150000,
+//                 quantity: 1,
+//             },
+//             {
+//                 itemId: "OR50",
+//                 itemName: "Oppo reno 50",
+//                 price: 25000,
+//                 quantity: 1,
+//             }
+//         ],
+//         address: {
+//             country: "India",
+//             state: "Andhra Pradesh",
+//             district: "East Godavari",
+//             city: "Rajahmundry",
+//             pincode: 533101,
+//         }
+//     },
 
-    {
-        orderId: 5,
-        customer: {
-            name: 'Madhu',
-            age: 25,
-            email: "[EMAIL_ADDRESS]",
-            gender: "Male",
-        },
-        items: [
-            {
-                itemId: "FRGt6t",
-                itemName: "Realme GT 6T",
-                price: 30000,
-                quantity: 1,
-            },
-            {
-                itemId: "ONCE4",
-                itemName: "OnePlus nord CE 4",
-                price: 24999,
-                quantity: 2,
-            }
-        ],
-        address: {
-            country: "India",
-            state: "Tamil Nadu",
-            district: "Chennai",
-            city: "Chennai",
-            pincode: 600001,
-        }
-    }
-];
+//     {
+//         orderId: 5,
+//         customer: {
+//             name: 'Madhu',
+//             age: 25,
+//             email: "[EMAIL_ADDRESS]",
+//             gender: "Male",
+//         },
+//         items: [
+//             {
+//                 itemId: "FRGt6t",
+//                 itemName: "Realme GT 6T",
+//                 price: 30000,
+//                 quantity: 1,
+//             },
+//             {
+//                 itemId: "ONCE4",
+//                 itemName: "OnePlus nord CE 4",
+//                 price: 24999,
+//                 quantity: 2,
+//             }
+//         ],
+//         address: {
+//             country: "India",
+//             state: "Tamil Nadu",
+//             district: "Chennai",
+//             city: "Chennai",
+//             pincode: 600001,
+//         }
+//     }
+// ];
 
 
-// map method
-const summaries = orders.map((order) => {
-    const totalPrice = order.items.reduce((acc, item) => { return acc + item.price * item.quantity }, 0)
+// // map method
+// const summaries = orders.map((order) => {
+//     const totalPrice = order.items.reduce((acc, item) => { return acc + item.price * item.quantity }, 0)
 
-    return `${order.customer.name} placed total orders of ${order.items.length} worth of ₹${totalPrice}`
-});
+//     return `${order.customer.name} placed total orders of ${order.items.length} worth of ₹${totalPrice}`
+// });
+// console.log(summaries);
 
-console.log(summaries);
+
+// // foreach method
+
+// const DomContainer = document.querySelector("#container ul")
+
+// orders.forEach((order) => {
+//     DomContainer.innerHTML += `
+//     ${order.customer.name}
+//     `
+// });
