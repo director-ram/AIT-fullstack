@@ -52,8 +52,12 @@
 
 
 # banking application with functions and multiple users
-from posixpath import pardir
 users = []
+
+username = ''
+password = ''
+user_id = 0
+# user_found = False
 
 def deposite(amount):
     users[user_id]["balance"] += amount
@@ -62,26 +66,21 @@ def deposite(amount):
 def withdraw(amount):
     if users[user_id]["balance"] >= amount:
         users[user_id]["balance"] -= amount
-        return users[user_id]["balance"]
+        print(f"The {amount} has been withdrawn successfully!!")
+        return f"The current balance after withdraw is {users[user_id]["balance"]}"
     else:
         return "Insufficient Funds"
 
 def balance():
     return users[user_id]["balance"]
 
-print('''
+
+while True:
+    print('''
     1. Login In
     2. Sign Up
     3. Exit
 ''')
-
-username = ''
-password = ''
-user_id = ''
-user_found = False
-
-
-while user_found != True:
     auth = int(input(" Enter one for login & two for signup or three for exit: "))
     if auth == 1:
         print("\n --- Enter login details ---\n")
@@ -91,9 +90,9 @@ while user_found != True:
         for index, user in enumerate(users):
             if user["username"] == username and user["password"] == password:
                 print('Login successful!!')
-                user_found = True
+                # user_found = True
                 user_id = index
-                while user_found != False:
+                while True:
                     print('''
                         ===== Welcome To Bank AnteGudi ======
                             1. Deposite
@@ -122,17 +121,19 @@ while user_found != True:
                             print("Thanks for visiting Bank AnteGudi!!")
                             user_found = False
                             break
+                        case _:
+                            print("please enter valid choice from above!!")
                 break
             else:
                 print("Invalid username or password!")
     elif auth == 2:
         print("\n --- Enter signup details --- \n")
-        uname = input("Enter username: ")
-        pword = input("Enter password: ")
+        initial_name = input("Enter username: ")
+        initial_password = input("Enter password: ")
         initial_balance = int(input("Enter your Balance: "))
         users.append({
-            "username": uname,
-            "password": pword,
+            "username": initial_name,
+            "password": initial_password,
             "balance": initial_balance
         })
         print("Registered successfully!!")
