@@ -13,6 +13,12 @@ def say_message(name): #here the name is parameter
 
 say_message('Hemasai') # here the value is aurgument
 
+# function with return
+def hello(name):
+    return 'Hello ' + name
+
+print(hello('hemasai'))
+
 # positional aurg & keyword aurg
 
 def math(a,b,c,d):
