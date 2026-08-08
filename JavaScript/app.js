@@ -560,3 +560,73 @@
 //     ${order.customer.name}
 //     `
 // });
+
+
+// get highest salary
+
+// employees array
+// const employees = [
+//     {
+//         name: "Hemasai",
+//         salary: 50000,
+//         id: 1,
+//         department: "IT",
+//         role: "Developer",
+//         experience: 2
+//     },
+//     {
+//         name: "Varun",
+//         salary: 60000,
+//         id: 2,
+//         department: "HR",
+//         role: "Manager",
+//         experience: 5
+//     }
+// ];
+
+// function highSalary(minSalary, maxSalary) {
+//     highEarners = employees.filter((emp) => {
+//         return emp.salary >= minSalary && emp.salary <= maxSalary;
+//     })
+//     console.log(highEarners.map((emp) => emp.name));
+// }
+
+// highSalary(50000, 100000);
+
+// // get highest salary
+// const highestSalary = employees.reduce((maxSalary, employee) => {
+//     return employee.salary > maxSalary ? employee.salary : maxSalary;
+// }, 0);
+// console.log(highestSalary);
+
+
+
+// objects
+
+const person = {
+    name: "Hemasai",
+    age: 22,
+    education: "B.Tech CSE",
+    address: {
+        city: "Gudivada",
+        district: "Krishna",
+        state: "Andhra Pradesh",
+        pincode: 521301,
+    }
+}
+
+// console.log(person);
+
+
+
+// object destructring
+
+const { name: fullName, age, education, address: { state, city } } = person;
+
+console.log(fullName, age, education, state, city);
+
+// rest operator
+
+const { name, age:personAge, ...info } = person;
+
+console.log(info);
