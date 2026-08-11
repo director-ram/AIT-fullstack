@@ -603,30 +603,79 @@
 
 // objects
 
-const person = {
-    name: "Hemasai",
-    age: 22,
-    education: "B.Tech CSE",
-    address: {
-        city: "Gudivada",
-        district: "Krishna",
-        state: "Andhra Pradesh",
-        pincode: 521301,
-    }
-}
+// const person = {
+//     name: "Hemasai",
+//     age: 22,
+//     education: "B.Tech CSE",
+//     address: {
+//         city: "Gudivada",
+//         district: "Krishna",
+//         state: "Andhra Pradesh",
+//         pincode: 521301,
+//     }
+// }
 
-// console.log(person);
+// // console.log(person);
 
 
 
-// object destructring
+// // object destructring
 
-const { name: fullName, age, education, address: { state, city } } = person;
+// const { name: fullName, age, education, address: { state, city } } = person;
 
-console.log(fullName, age, education, state, city);
+// console.log(fullName, age, education, state, city);
 
-// rest operator
+// // rest operator
 
-const { name, age:personAge, ...info } = person;
+// const { name, age:personAge, ...info } = person;
 
-console.log(info);
+// console.log(info);
+
+
+
+// DOM manipulation
+
+const header = document.querySelector("#title");
+header.textContent = `This is a heading added using javascript!`;
+
+
+// keyboard events
+
+const keyBoard = document.querySelector("#keyBoard");
+const keyBoardMessage = document.querySelector("#keyBoardMessage")
+
+// keyBoard.addEventListener("keydown", (event) => console.log(event.target.value));
+// keyBoard.addEventListener("keyup", (event) => console.log(event.target.value));
+keyBoard.addEventListener("input", () => keyBoardMessage.textContent = keyBoard.value)
+// keyBoard.addEventListener("change", (event) => console.log(event.target.value));
+
+
+// mouse events
+
+const mouseBox = document.getElementById("mouseBox");
+const mouseMessage = document.getElementById("mouseMessage");
+
+mouseBox.addEventListener("mouseenter", () => {
+    mouseBox.classList.add("active");
+    mouseMessage.textContent = "You entered the box";
+});
+
+mouseBox.addEventListener("mouseleave", () => {
+    mouseBox.classList.remove("active");
+    mouseMessage.textContent = "You left the box";
+});
+
+mouseBox.addEventListener("mousemove", (event) => {
+    mouseMessage.textContent = `Your moving inside the box in X:${event.offsetX},Y:${event.offsetY}`;
+});
+
+mouseBox.addEventListener("dblclick", () => mouseMessage.textContent = "Double Click Detected!!")
+
+
+
+// click events
+
+const clickMessage = document.querySelector("#clickMessage");
+const button = document.getElementById("Btn");
+
+button.addEventListener("click", () => clickMessage.textContent = "you clicked the button");

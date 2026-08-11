@@ -5,18 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .container ul {
-            display: block;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div id="container" class="container">
         <ul>
         </ul>
+    </div>
+
+    <h2 id="title" class="header"></h2>
+
+    <!-- keyboard events -->
+    <label for="keyBoard" style="font-size: 35px;">This is keyboard events: </label>
+    <input type="textarea" name="keyBoard" id="keyBoard" class="key-board" placeholder="Type some shit here....">
+    <p id="keyBoardMessage" class="key-board-message"></p>
+
+
+    <!-- mouse events -->
+    <div class="mouse-container">
+        <div id="mouseBox" class="mouse-box">
+            move mouse here
+        </div>
+        <p id="mouseMessage" style="font-size: 20px;"> Enter the mouse </p>
+    </div>
+
+    <!-- click events -->
+    <div class="event-container">
+        <p id="clickMessage" class="click-message"></p>
+        <button id="Btn" class="btn" type="button">Click here</button>
     </div>
     <script src="app.js"></script>
 </body>
