@@ -635,47 +635,57 @@
 
 // DOM manipulation
 
-const header = document.querySelector("#title");
-header.textContent = `This is a heading added using javascript!`;
+// const header = document.querySelector("#title");
+// header.textContent = `This is a heading added using javascript!`;
 
 
-// keyboard events
+// // keyboard events
 
-const keyBoard = document.querySelector("#keyBoard");
-const keyBoardMessage = document.querySelector("#keyBoardMessage")
+// const keyBoard = document.querySelector("#keyBoard");
+// const keyBoardMessage = document.querySelector("#keyBoardMessage")
 
-// keyBoard.addEventListener("keydown", (event) => console.log(event.target.value));
-// keyBoard.addEventListener("keyup", (event) => console.log(event.target.value));
-keyBoard.addEventListener("input", () => keyBoardMessage.textContent = keyBoard.value)
-// keyBoard.addEventListener("change", (event) => console.log(event.target.value));
-
-
-// mouse events
-
-const mouseBox = document.getElementById("mouseBox");
-const mouseMessage = document.getElementById("mouseMessage");
-
-mouseBox.addEventListener("mouseenter", () => {
-    mouseBox.classList.add("active");
-    mouseMessage.textContent = "You entered the box";
-});
-
-mouseBox.addEventListener("mouseleave", () => {
-    mouseBox.classList.remove("active");
-    mouseMessage.textContent = "You left the box";
-});
-
-mouseBox.addEventListener("mousemove", (event) => {
-    mouseMessage.textContent = `Your moving inside the box in X:${event.offsetX},Y:${event.offsetY}`;
-});
-
-mouseBox.addEventListener("dblclick", () => mouseMessage.textContent = "Double Click Detected!!")
+// // keyBoard.addEventListener("keydown", (event) => console.log(event.target.value));
+// // keyBoard.addEventListener("keyup", (event) => console.log(event.target.value));
+// keyBoard.addEventListener("input", () => keyBoardMessage.textContent = keyBoard.value)
+// // keyBoard.addEventListener("change", (event) => console.log(event.target.value));
 
 
+// // mouse events
 
-// click events
+// const mouseBox = document.getElementById("mouseBox");
+// const mouseMessage = document.getElementById("mouseMessage");
 
-const clickMessage = document.querySelector("#clickMessage");
-const button = document.getElementById("Btn");
+// mouseBox.addEventListener("mouseenter", () => {
+//     mouseBox.classList.add("active");
+//     mouseMessage.textContent = "You entered the box";
+// });
 
-button.addEventListener("click", () => clickMessage.textContent = "you clicked the button");
+// mouseBox.addEventListener("mouseleave", () => {
+//     mouseBox.classList.remove("active");
+//     mouseMessage.textContent = "You left the box";
+// });
+
+// mouseBox.addEventListener("mousemove", (event) => {
+//     mouseMessage.textContent = `Your moving inside the box in X:${event.offsetX},Y:${event.offsetY}`;
+// });
+
+// mouseBox.addEventListener("dblclick", () => mouseMessage.textContent = "Double Click Detected!!")
+
+
+
+// // click events
+
+// const clickMessage = document.querySelector("#clickMessage");
+// const button = document.getElementById("Btn");
+
+// button.addEventListener("click", () => clickMessage.textContent = "you clicked the button");
+
+
+
+
+// Regex patterns
+
+const userNamePattren = /^[A-Z][A-Za-z0-9]{1,}$/;
+const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$*&%^!#?(/)])[A-Za-z\d\W]{8,}$/;
+console.log(userNamePattren.test("Hemasai123"));
+console.log(passwordPattern.test("Hema$123"));

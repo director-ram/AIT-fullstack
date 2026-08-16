@@ -181,6 +181,7 @@ def cart():
         total_price = 0
         for i in users[user_id]["cart"]:
                 total_price += i["price"]
+                print(i["item"] , ":", i["quantity"] , ": ₹", i["price"])
         print("The total price of the cart is: ",total_price)
     else:
         print("cart is empty please add any products!!")
