@@ -685,7 +685,64 @@
 
 // Regex patterns
 
-const userNamePattren = /^[A-Z][A-Za-z0-9]{1,}$/;
-const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$*&%^!#?(/)])[A-Za-z\d\W]{8,}$/;
-console.log(userNamePattren.test("Hemasai123"));
-console.log(passwordPattern.test("Hema$123"));
+// const userNamePattren = /^[A-Z][A-Za-z0-9]{1,}$/;
+// const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$*&%^!#?(/)])[A-Za-z\d\W]{8,}$/;
+// console.log(userNamePattren.test("Hemasai123"));
+// console.log(passwordPattern.test("Hema$123"));
+
+
+
+
+// scope and hoisting
+
+// try to access a variable before its declaration it throws error
+
+// let b;
+// console.log(b);
+
+// but in using var it gives undefined due to hoisting and
+// for function it executes code making a function call before function declaration
+
+// console.log(name);
+
+// fullName();
+
+// var name = "hemasai";
+// console.log(name);
+
+// function fullName() {
+//     console.log("Hemasai K");
+// }
+
+// // note: for let, const and function expression hoisting doesn't work
+
+
+
+// // scope
+
+// // there are global scope, local scope and block scope
+
+// // global scope
+// let userName = "Hemasai";
+// console.log(`accessed from global ${userName}`);
+
+// function test() {
+//     console.log(`${userName} accessed from local`);
+// }
+// test();
+
+
+// // local scope or function scope
+// function Name() {
+//     let age = 22;
+//     console.log(`hi ${userName} and you're ${age} yrs old.`);
+// }
+// Name(); //age can't be accessed outside function
+
+
+// // block scope
+
+// {
+//     let firstName = "hema";
+//     console.log(firstName);
+// }
