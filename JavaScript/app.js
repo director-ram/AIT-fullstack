@@ -746,3 +746,42 @@
 //     let firstName = "hema";
 //     console.log(firstName);
 // }
+
+
+
+// lexical scoping
+
+// let name = "Hemasai";
+
+// function greet() {
+//     let age = 22
+//     console.log(`hi ${name}, your age is ${age}`);
+// }
+
+// function test() {
+//     let name = "world";
+//     greet();
+// }
+
+// test();
+
+
+
+// clousers
+
+// function createCounter() {
+//     let count = 0;
+
+//     return function () {
+//         count++;
+//         return count;
+//     }
+// }
+
+// const counter = createCounter();
+
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());

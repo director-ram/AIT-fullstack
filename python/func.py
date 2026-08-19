@@ -82,42 +82,79 @@
 
 import random
 
-# ran_num = random.randint(1, 10)
-# lifes = 5
-# score = 0
+ran_num = random.randint(1, 10)
+lifes = 5
+score = 0
 
-# while lifes>0:
-#     guess_num = int(input("Guess a number betweeb 1-10: "))
-#     print()
-#     if guess_num == ran_num:
-#         print("Saaaaabhaaash!!\n")
-#         score += 1
-#         print(f"Your score is {score}\n")
-#         ran_num = random.randint(1, 10)
-#     else:
-#         print("malla try chey bhAAAi !!\n")
-#         lifes -= 1
-#         print(f"Inka {lifes} lives vunaee ra betey.\n")
-#         if guess_num > ran_num:
-#             print("mari ekkuva aendi bhai num tagginchu!\n")
-#         else:
-#             print("mari takkuva aendi bhai num penchu!\n")
-#     if lifes == 0:
-#         print("Khatam Tata Bye bye!\n")
+while lifes>=0:
+    guess_num = int(input("Guess a number betweeb 1-10: "))
+    print()
+    if guess_num == ran_num:
+        print("Saaaaabhaaash!!\n")
+        score += 1
+        print(f"Your score is {score}\n")
+        ran_num = random.randint(1, 10)
+    elif lifes == 0:
+        print(''' 
+        thappu chepinav bhai
+        Khatam Tata Bye bye!
+        ''')
+        lifes -=1
+    else:
+        print("\nmalla try chey bhAAAi !!\n")
+        lifes -= 1
+        print(f"Inka {lifes} live/s vunaee ra betey.\n")
+        if guess_num > ran_num:
+            print("mari ekkuva aendi bhai num tagginchu!\n")
+        else:
+            print("mari takkuva aendi bhai num penchu!\n")
 
 
-# print(f"Your total score is : {score}")
+print(f"Your total score is : {score}\n")
 
 
 # rolling dice
 
-# dice = random.randint(1,6)
+dice = random.randint(1,6)
 
-# print("\nrolling....")
-# print(dice)
+print("\nrolling dice....")
+print(dice)
+print()
 
 
 
+# password generation
+import string
+
+gen_passw = ''
+password_values = string.ascii_letters + string.digits + "!@#$%&*^"
+
+for i in range(1,17):
+    gen_passw += random.choice(password_values)
+print(gen_passw) 
+print()
+
+
+
+# OTP generation
+gen_otp = ''
+otp = string.digits
+for i in range(1,7):
+    gen_otp += random.choice(otp)
+
+print(gen_otp)
+print()
+
+
+
+# captcha
+gen_cpt = ''
+captcha = string.ascii_letters + string.digits
+for i in range(1,5):
+    gen_cpt += random.choice(captcha)
+
+print(gen_cpt)
+print()
 
 # Distributing cards to 4 players
 
@@ -134,7 +171,9 @@ player2 = cards[13:26]
 player3 = cards[26:39]
 player4 = cards[39:52]
 
-print("Player 1: ", player1)
-print("Player 2: ", player2)
-print("Player 3: ", player3)
-print("Player 4: ", player4)
+print(f'''
+        Atagadu 1: {player1},
+        Atagadu 2: {player2},
+        Atagadu 3: {player3},
+        Atagadu 4: {player4}
+    ''')
