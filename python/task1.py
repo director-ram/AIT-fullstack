@@ -225,3 +225,18 @@
 #         j+=1
 #     print()
 #     a+=1
+
+
+
+# file handaling
+
+
+# to create a file
+# file_create = open("newfile.txt","w")
+# file_create.write("Hemasai")
+# file_create.close()
+
+
+# to read a file
+# f = open("newfile.txt", "r")
+# print(f.read())
