@@ -785,3 +785,154 @@
 // console.log(counter());
 // console.log(counter());
 // console.log(counter());
+
+
+
+// OOP
+// 1. class and object
+// class Student {
+//     constructor(){
+//         this.name = "Hemasai";
+//         this.age = 22;
+//         this.email = "khemasai413@gmail.com";
+//         this.phone = "9876543210";
+//         this.address = "Gudivada";
+//         this.city = "Krishna";
+//         this.state = "Andhra Pradesh";
+//         this.pincode = 521301;
+//     }
+//     getName() {
+//         return this.name;
+//     }
+//     getAge() {
+//         return this.age;
+//     }
+//     getEmail() {
+//         return this.email;
+//     }
+//     getPhone() {
+//         return this.phone;
+//     }
+// }
+
+// inheritance
+// class StudentClass extends Student{
+//     constructor(){
+//         super();
+//         this.className = "12th";
+//         this.section = "A";
+//     }
+//     getClassName() {
+//         return this.className;
+//     }
+//     getSection() {
+//         return this.section;
+//     }
+// }
+
+// creating a object for the class
+// const student = new Student(); //creates a constructor for the class
+// console.log(student.getName());
+// console.log(student.getPhone());
+
+// const studentClass = new StudentClass();
+// console.log(studentClass.getClassName());
+// console.log(studentClass.getSection());
+
+
+
+// encapsulation
+// class StudentEncapsulation {
+//     constructor(){
+//         this.name = "Hemasai";
+//         this.age = 22;
+//         this.email = "khemasai413@gmail.com";
+//         this.phone = "9876543210";
+//         this.address = "Gudivada";
+//         this.city = "Krishna";
+//         this.state = "Andhra Pradesh";
+//         this.pincode = 521301;
+//     }
+// }
+
+
+
+// polymorphism
+// class StudentMethods{
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     getName() {
+//         return `Hello ${this.name}`;
+//     }
+//     getAge() {
+//         return `You are ${this.age} years old`;
+//     }
+// }
+
+// class Person extends StudentMethods{
+//     constructor(name, age){
+//         super(name, age);
+//     }
+//     getName(){
+//         return `Hello ${this.name} from Person class`;
+//     }
+//     getAge(){
+//         return `You are ${this.age} years old from Person class`;
+//     }
+// }
+
+// const person = new Person("Hemasai", 22);
+// console.log(person.getName());
+// const student = new StudentMethods("Nateesha", 21);
+// console.log(student.getAge());
+// console.log(student.getName());
+
+
+
+// hierarchy inheritance
+// class StudentHierarchy extends StudentMethods{
+//     constructor(name, age){
+//         super(name, age);
+//     }
+//     getStudent() {
+//         return `Hello ${this.name} and you are ${this.age} years old`;
+//     }
+// }
+
+// const studentHierarchy = new StudentHierarchy("Varun Kumar", 22);
+// console.log(studentHierarchy.getStudent());
+
+
+
+// Asyncronous programming
+// 1. Promises
+// 2. Async/await
+// 3. Fetch API
+// 4. XMLHttpRequest
+// 5. WebSocket
+// 6. Web Workers
+// 7. Service Workers
+// 8. IndexedDB
+// 9. Cache API
+// 10. WebRTC
+// 11. Web Speech API
+
+// console.log(`Hello from console before setTimeout`);
+// setTimeout(()=>{
+//     console.log(`Hello from setTimeout`);
+// },5000);
+// console.log(`Hello from console after setTimeout`);
+
+
+// to clear setInterval
+count=0;
+const countId = setInterval(()=>{
+    console.log(`current count: ${count}`);
+    count++;
+    if (count > 10){
+        clearInterval(countId);
+        console.log(`Interval cleared`);
+    }
+},1000);
