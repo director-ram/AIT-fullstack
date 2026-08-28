@@ -52,20 +52,51 @@
 
 
 # banking application with functions and multiple users
-users = []
+import os
+import csv
 
 username = ''
 password = ''
 user_id = 0
+users_file = 'users.csv'
 # user_found = False
+
+
+def load_users():
+    if  not os.path.exists(users_file):
+        return []
+    with open(users_file, 'r', newline="") as file:
+        reader = csv.DictReader(file)
+        loaded = []
+        for row in reader:
+            loaded.append({
+                "username": row["username"],
+                "password": row["password"],
+                "balance": int(row["balance"])
+            })
+    return loaded
+def save_users():
+    with open(users_file, 'w', newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=["username", "password", "balance"])
+        writer.writeheader()
+        for user in users:
+            writer.writerow({
+                "username": user["username"],
+                "password": user["password"],
+                "balance": user["balance"]
+            })
+
+users = load_users()
 
 def deposite(amount):
     users[user_id]["balance"] += amount
+    save_users()
     return users[user_id]["balance"]
 
 def withdraw(amount):
     if users[user_id]["balance"] >= amount:
         users[user_id]["balance"] -= amount
+        save_users()
         print(f"The {amount} has been withdrawn successfully!!")
         return f"The current balance after withdraw is {users[user_id]["balance"]}"
     else:
@@ -81,11 +112,13 @@ while True:
     2. Sign Up
     3. Exit
 ''')
-    auth = int(input(" Enter one for login & two for signup or three for exit: "))
+
+    users = load_users()
+    auth = int(input(" Enter one for login & two for signup or three for exit: ").strip())
     if auth == 1:
         print("\n --- Enter login details ---\n")
-        username = input('Enter username: ')
-        password = input('Enter your password: ')
+        username = input('Enter username: ').strip()
+        password = input('Enter your password: ').strip()
 
         for index, user in enumerate(users):
             if user["username"] == username and user["password"] == password:
@@ -101,17 +134,17 @@ while True:
                             4. Exit
                     ''')
 
-                    choice = int(input("Enter your choice from above: "))
+                    choice = int(input("Enter your choice from above: ").strip())
                     print()
 
                     match choice:
                         case 1:
-                            amount = int(input("Enter the amount to deposite: "))
+                            amount = int(input("Enter the amount to deposite: ").strip())
                             print(f'The deposite of {amount} has been done successfully!!')
                             print("The current balance is ",deposite(amount))
                             print()
                         case 2:
-                            amount = int(input("Enter the amount to withdraw: "))
+                            amount = int(input("Enter the amount to withdraw: ").strip())
                             print(withdraw(amount))
                             print()
                         case 3:
@@ -119,24 +152,28 @@ while True:
                             print()
                         case 4:
                             print("Thanks for visiting Bank AnteGudi!!")
-                            user_found = False
+                            # user_found = False
                             break
                         case _:
                             print("please enter valid choice from above!!")
                 break
-            else:
+        else:
                 print("Invalid username or password!")
     elif auth == 2:
         print("\n --- Enter signup details --- \n")
-        initial_name = input("Enter username: ")
-        initial_password = input("Enter password: ")
-        initial_balance = int(input("Enter your Balance: "))
-        users.append({
-            "username": initial_name,
-            "password": initial_password,
-            "balance": initial_balance
-        })
-        print("Registered successfully!!")
+        initial_name = input("Enter username: ").strip()
+        initial_password = input("Enter password: ").strip()
+        initial_balance = int(input("Enter your Balance: ").strip())
+        if any(user["username"] == initial_name for user in users):
+            print("Username already exists!!")
+        else:
+            users.append({
+                "username": initial_name,
+                "password": initial_password,
+                "balance": initial_balance
+            })
+            save_users()
+            print("Registered successfully!!")
         print()
     elif auth == 3:
         print("Come back again!!")

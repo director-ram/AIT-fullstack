@@ -18,10 +18,10 @@ def groceries():
                 |
                 ==================
         ''')
-            choice = int(input("\n Enter your choice from above: \n"))
+            choice = int(input("\n Enter your choice from above: \n").strip())
             match choice:
                 case 1:
-                    quantity = int(input("Enter the quantity of tomatoes you want: "))
+                    quantity = int(input("Enter the quantity of tomatoes you want: ").strip())
                     if quantity > 0:
                         total_price = quantity * 60
                         users[user_id]["cart"].append({
@@ -34,7 +34,7 @@ def groceries():
                         print("\n Quantity should greater than zero \n")
 
                 case 2:
-                    quantity = int(input("Enter the quantity of potatoes you want: "))
+                    quantity = int(input("Enter the quantity of potatoes you want: ").strip())
                     total_price = quantity * 40
                     if quantity > 0:
                         users[user_id]["cart"].append({
@@ -46,7 +46,7 @@ def groceries():
                     else:
                         print("\n Quantity should greater than zero \n")
                 case 3:
-                    quantity = int(input("Enter the quantity of onions you want: "))
+                    quantity = int(input("Enter the quantity of onions you want: ").strip())
                     if quantity > 0:
                         total_price = quantity * 80
                         users[user_id]["cart"].append({
@@ -76,10 +76,10 @@ def mobiles():
                 |
                 ==================
         ''')
-        choice = int(input("\n Enter your choice from above: \n"))
+        choice = int(input("\n Enter your choice from above: \n").strip())
         match choice:
             case 1:
-                quantity = int(input("Enter the quantity you want: "))
+                quantity = int(input("Enter the quantity you want: ").strip())
                 if quantity > 0:
                     total_price = quantity * 150000
                     users[user_id]["cart"].append({
@@ -91,7 +91,7 @@ def mobiles():
                 else:
                     print("\n Quantity should greater than zero \n")
             case 2:
-                quantity = int(input("Enter the quantity you want: "))
+                quantity = int(input("Enter the quantity you want: ").strip())
                 if quantity > 0:
                     total_price = quantity * 100000
                     users[user_id]["cart"].append({
@@ -103,7 +103,7 @@ def mobiles():
                 else:
                     print("\n Quantity should greater than zero \n")
             case 3:
-                quantity = int(input("Enter the quantity you want: "))
+                quantity = int(input("Enter the quantity you want: ").strip())
                 if quantity > 0:
                     total_price = quantity * 30000
                     users[user_id]["cart"].append({
@@ -133,10 +133,10 @@ def cloths():
                 |
                 ==================
         ''')
-        choice = int(input("\n Enter your choice from above: \n"))
+        choice = int(input("\n Enter your choice from above: \n").strip())
         match choice:
             case 1:
-                quantity = int(input("Enter the quantity you want: "))
+                quantity = int(input("Enter the quantity you want: ").strip())
                 if quantity > 0:
                     total_price = quantity * 999
                     users[user_id]["cart"].append({
@@ -148,7 +148,7 @@ def cloths():
                 else:
                     print("\n Quantity should greater than zero \n")
             case 2:
-                quantity = int(input("Enter the quantity you want: "))
+                quantity = int(input("Enter the quantity you want: ").strip())
                 if quantity > 0:
                     total_price = quantity * 1999
                     users[user_id]["cart"].append({
@@ -160,7 +160,7 @@ def cloths():
                 else:
                     print("\n Quantity should greater than zero \n")
             case 3:
-                quantity = int(input("Enter the quantity you want: "))
+                quantity = int(input("Enter the quantity you want: ").strip())
                 if quantity > 0:
                     total_price = quantity * 499
                     users[user_id]["cart"].append({
@@ -199,7 +199,7 @@ def payment():
                 2. Debit Card
                 3. UPI
         ''')
-        pay = int(input("Enter the payment way from above: "))
+        pay = int(input("Enter the payment way from above: ").strip())
         match pay:
             case 1:
                 print(f"\n You paid amount of {total_price} via Credit Card!!\n")
@@ -218,11 +218,11 @@ while True:
         2. Sign Up
         3. Exit
     ''')
-    option = int(input("\n Enter 1 for login & 2 for signup or 3 for exit: \n"))
+    option = int(input("\n Enter 1 for login & 2 for signup or 3 for exit: \n").strip())
 
     if option == 1:
-        u_name = input("Enter your username: ")
-        u_password = input("Enter your password: ")
+        u_name = input("Enter your username: ").strip()
+        u_password = input("Enter your password: ").strip()
         for index,user in enumerate(users):
             if u_name == user["username"] and u_password == user["password"]:
                 user_id = index
@@ -238,7 +238,7 @@ while True:
                         6. Exit
                     ''')
 
-                    choice = int(input("\nEnter your choice from above: \n"))
+                    choice = int(input("\nEnter your choice from above: \n").strip())
                     match choice:
                         case 1:
                             groceries()
@@ -256,11 +256,11 @@ while True:
                         case _:
                             print("\n Invalid choice\n")
                 break
-            else:
-                print("\n Invalid username or password! \n")
+        else:
+            print("\n Invalid username or password! \n")
     elif option == 2:
-        init_username = input("Enter your username: ")
-        init_password = input("Enter your password: ")
+        init_username = input("Enter your username: ").strip()
+        init_password = input("Enter your password: ").strip()
         if any(user["username"] == init_username for user in users):
             print("\n Username already exists!! \n")
         else:

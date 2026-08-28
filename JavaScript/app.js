@@ -925,14 +925,22 @@
 // },5000);
 // console.log(`Hello from console after setTimeout`);
 
+// to clear setTimeout
+// const timeoutId = setTimeout(()=>{
+//     displayMessage.textContent = `Timeout cleared`;
+// },5000);
+
+// clearTimeout(timeoutId);
+
 
 // to clear setInterval
-count=0;
-const countId = setInterval(()=>{
-    console.log(`current count: ${count}`);
-    count++;
-    if (count > 10){
-        clearInterval(countId);
-        console.log(`Interval cleared`);
-    }
-},1000);
+// count=0;
+// displayMessage = document.getElementById("counterMessage");
+// const countId = setInterval(()=>{
+//     displayMessage.textContent = `current count: ${count}`;
+//     count++;
+//     if (count >= 10){
+//         clearInterval(countId);
+//         displayMessage.textContent = `Interval cleared and the count is ${count}`;
+//     }
+// },1000);
