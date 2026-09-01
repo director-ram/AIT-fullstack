@@ -944,3 +944,21 @@
 //         displayMessage.textContent = `Interval cleared and the count is ${count}`;
 //     }
 // },1000);
+
+
+
+// Async/Await and fetch API
+
+// async function users() {
+//     const response = await fetch('https://dummyjson.com/users');
+//     const data = await response.json();    //json() is used to parse the response into a javascript object
+//     users = data.users;
+//     users.forEach((user) => {
+//         console.log(`Fullname: ${user.firstName} ${user.lastName}`);
+//         console.log(`Email: ${user.email}`);
+//         console.log(`Phone: ${user.phone}`);
+//         console.log();
+//     });
+//     console.log(`Total users: ${users.length}`);
+// }
+// users();
