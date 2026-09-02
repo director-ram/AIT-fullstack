@@ -240,3 +240,134 @@
 # to read a file
 # f = open("newfile.txt", "r")
 # print(f.read())
+
+
+
+# Regular Expressions
+
+import re
+
+# text = "Hello, my name is Hemasai and I am a student of Computer Science and Engineering"
+
+# res  =  re.search("Hemasai",text)
+# print(res.group())
+
+# res1 = re.findall("Hemasai",text)
+# print(res1)
+
+# res2 = re.match("Hemasai",text)
+# print(res2)
+
+# res3 = re.sub("Hemasai","Sai",text)
+# print(res3)
+
+# res4 = re.fullmatch("Hemasai",text)
+# print(res4)
+
+# pattren matching
+# ^ - starts with
+# $ - ends with
+# * - 0 or more
+# + - 1 or more
+# ? - 0 or 1
+# {n} - exactly n times
+# {n,m} - between n and m times
+# {n,} - at least n times
+# {,m} - at most m times
+# [] - any character in the range
+# [^] - any character not in the range
+# () - exact match
+# \d - any digit
+# \w - any word character
+# \s - any whitespace character
+# \b - any word boundary
+# \A - any character at the beginning
+# \Z - any character at the end
+# \n - any newline character
+# \r - any carriage return character
+# \t - any tab character
+# \f - any form feed character
+# \v - any vertical tab character
+# \a - any alert character
+
+# password_pattern = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
+# user_password = input("Enter your password: ")
+# if re.match(password_pattern, user_password):
+#     print("Password is valid")
+# else:
+#     print("Password is invalid")
+
+
+
+# multithreading
+# from threading import Thread,Lock,Semaphore
+# from queue import Queue
+# import time
+# def task1():
+#     semaphore.acquire()
+#     print("Task 1 started")
+#     time.sleep(1)
+#     print("Task 1 finished")
+#     semaphore.release()
+# def task2():
+#     semaphore.acquire()
+#     print("Task 2 started")
+#     time.sleep(1)
+#     print("Task 2 finished")
+#     semaphore.release()
+# lock = Lock()
+
+# thread1 = Thread(target=task1)
+# thread2 = Thread(target=task2)
+# thread1.start()
+# thread2.start()
+# thread1.join()
+# thread2.join()
+# print("All tasks finished")
+
+# def task3():
+#     semaphore.acquire()
+#     print("Task 3 started")
+#     time.sleep(1)
+#     print("Task 3 finished")
+#     semaphore.release()
+# semaphore = Semaphore(2)
+# thread1 = Thread(target=task1)
+# thread2 = Thread(target=task2)
+# thread3 = Thread(target=task3)
+# thread1.start()
+# thread2.start()
+# thread3.start()
+# thread1.join()
+# thread2.join()
+# thread3.join()
+# print("All tasks finished")
+
+# def task4():
+#     semaphore.acquire()
+#     print("Task 4 started")
+#     time.sleep(1)
+#     print("Task 4 finished")
+#     semaphore.release()
+# semaphore = Semaphore(2)
+
+# def task5():
+#     queue.put("Task 5 started")
+#     time.sleep(1)
+#     print("Task 5 finished")
+#     queue.task_done()
+# def task6():
+#     queue.put("Task 6 started")
+#     time.sleep(1)
+#     print("Task 6 finished")
+#     queue.task_done()
+# queue = Queue()
+# thread1 = Thread(target=task5)
+# thread2 = Thread(target=task6)
+# thread1.start()
+# thread2.start()
+# thread1.join()
+# thread2.join()
+# print("All tasks finished")
+# print(queue.get())
+# print(queue.get())
