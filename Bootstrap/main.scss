@@ -1,0 +1,12 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+$theme-colors-text: (
+    "primary": $primary-text-emphasis,
+    "secondary": $secondary-text-emphasis,
+    "success": $success-text-emphasis,
+    "info": $info-text-emphasis,
+    "warning": $warning-text-emphasis,
+    "danger": $danger-text-emphasis,
+    "light": $light-text-emphasis,
+    "dark": $dark-text-emphasis,
+);
