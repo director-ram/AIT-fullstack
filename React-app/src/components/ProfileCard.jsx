@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 export default function ProfileCard() {
     const user = {
@@ -13,7 +13,7 @@ export default function ProfileCard() {
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
             <div className="bg-white max-w-sm w-full rounded-3xl shadow-xl overflow-hidden border border-gray-100 transition-transform hover:scale-105 duration-300">
-                <div className="h-32 bg-gradient-to-r from-blue-500 to-purple-600"></div>
+                <div className="h-32 bg-linear-to-r from-blue-500 to-purple-600"></div>
 
                 <div className="flex flex-col items-center px-6 pb-8">
                     <img src={user.image} alt="profile" className="h-32 w-32 rounded-full border-3 border-white object-cover -mt-16 mb-4 shadow-lg" />
