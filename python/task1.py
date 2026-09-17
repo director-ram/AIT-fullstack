@@ -245,7 +245,7 @@
 
 # Regular Expressions
 
-import re
+# import re
 
 # text = "Hello, my name is Hemasai and I am a student of Computer Science and Engineering"
 
@@ -296,6 +296,37 @@ import re
 #     print("Password is valid")
 # else:
 #     print("Password is invalid")
+
+
+
+# OS module
+# import os
+# import datetime
+# print(os.getcwd()) # get current working directory
+# print(os.listdir()) # list all files and directories in current working directory
+# os.chdir("D:\\AIT-Fullstack\\JavaScript") # change current working directory
+# print(os.getcwd()) # get current working directory
+# os.makedir("newfolder") # create new directory
+# os.makedirs("newfolder\\subfolder") # create new directory with subdirectory
+# os.remove("newfile.txt") # remove file
+# os.rmdir("newfolder") # remove directory
+# os.removedirs("newfolder") # remove directory
+# os.readlink("newfile.txt") # read symbolic link
+# os.rename("newfile.txt","newfile1.txt") # rename file
+# os.scandir() # list all files and directories in current working directory with details
+# os.close(file_descriptor) # close an open file descriptor
+# os.path.exists("newfile.txt") # check if file or directory exists, returns a boolean value
+# os.path.basename("D:\\AIT-Fullstack\\JavaScript\\newfile.txt") # get the base name of the file or directory
+# os.path.dirname("D:\\AIT-Fullstack\\JavaScript\\newfile.txt") # get the directory name of the file or directory
+# os.path.join("D:\\AIT-Fullstack\\JavaScript", "newfile.txt") # join path components
+
+# os.chdir(r'..\JavaScript')
+# print(os.getcwd())
+# info = os.stat('app.js')
+# atime = info.st_atime
+# mtime = info.st_mtime
+# print(datetime.datetime.fromtimestamp(atime).ctime())
+# print(datetime.datetime.fromtimestamp(mtime).ctime())
 
 
 
