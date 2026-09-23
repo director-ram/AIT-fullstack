@@ -42,11 +42,14 @@ def month_details_num(request,month):
         selected_month = months[month_name[month-1]]
         # print(f"Month details for {month} is {selected_month}")
         return HttpResponseRedirect(f"/webpage/month/{selected_month}/")
+        # return render(request,"month.html",{"month":selected_month})
 
 def month_details(request,month):
-    # selected_month = month
-    return HttpResponse(f'<h2>Month details</h2>' \
-                        f'<p style="color: purple;background-color: lightgray;">This is a {month}</p>')
+    selected_month = month
+    # return HttpResponse(f'<h2>Month details</h2>' \
+    #                     f'<p style="color: purple;background-color: lightgray;">This is a {month}</p>')
+    return render(request,"months.html",{"month":selected_month})
+
 
 def user_display(request,username):
     return render(request,"user.html",{"username":username})

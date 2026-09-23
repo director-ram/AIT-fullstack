@@ -1,4 +1,5 @@
-// import React from "react";
+import profileImage from '../assets/Ai-generated.jpeg'
+import './Profilecard.css'
 
 export default function ProfileCard() {
     const user = {
@@ -6,31 +7,29 @@ export default function ProfileCard() {
         age: 22,
         currentStatus: "Student",
         designation: "Fullstack Developer",
-        image: "./src/assets/Ai-generated.jpeg",
+        image: profileImage,
         skills: ["JavaScript", "React", "NextJS", "Python", "SQL", "MongoDB", "TailwindCSS", "PostgreSQL", "GoogleConsole", "React Native", "Flutter"],
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
-            <div className="bg-white max-w-sm w-full rounded-3xl shadow-xl overflow-hidden border border-gray-100 transition-transform hover:scale-105 duration-300">
-                <div className="h-32 bg-linear-to-r from-blue-500 to-purple-600"></div>
+        <div className="d-flex justify-content-center align-items-center min-vh-100 bg-light p-4">
+            <div className="card w-100 shadow-lg overflow-hidden border-0 rounded-5" style={{ maxWidth: '24rem' }}>
+                {/* <div className="py-5 bg-primary bg-gradient"></div> */}
 
-                <div className="flex flex-col items-center px-6 pb-8">
-                    <img src={user.image} alt="profile" className="h-32 w-32 rounded-full border-3 border-white object-cover -mt-16 mb-4 shadow-lg" />
-                    <h1 className="text-2xl font-bold text-gray-800">{user.fullname}, {user.age}</h1>
-                    <p className="text-blue-600 font-semibold mt-1">{user.designation}</p>
-                    <p className="text-gray-500 text-sm mt-1 capitalize">{user.currentStatus}</p>
+                <div className="card-body d-flex flex-column align-items-center px-4 pb-4 m-0">
+                    <img src={user.image} alt="profile" className="rounded-circle border border-primary border-4 object-fit-cover shadow-lg mt-n5 mb-3" width="128" height="128" />
+                    <h1 className="h2 fw-bold text-dark">{user.fullname}, {user.age}</h1>
+                    <p className="text-primary fw-semibold mt-1 mb-0">{user.designation}</p>
+                    <p className="text-secondary small mt-1 text-capitalize mb-0">{user.currentStatus}</p>
 
-                    <div className="w-full mt-6">
-                        <h2 className="text-sm font-bold text-gray-700 uppercase mb-3 text-center">Skills</h2>
-                        <div className="flex flex-wrap justify-center gap-2">
-                            {user.skills.map((skill, index) => {
-                                return (
-                                    <span key={index} className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full border border-gray-200 hover:bg-gray-200 transition-colors duration-200">
-                                        {skill}
-                                    </span>
-                                );
-                            })}
+                    <div className="w-100 mt-4">
+                        <h2 className="h6 fw-bold text-secondary text-uppercase mb-3 text-center">Skills</h2>
+                        <div className="d-flex flex-wrap justify-content-center gap-2">
+                            {user.skills.map((skill) => (
+                                <span key={skill} className="badge rounded-pill text-bg-light bg-hover-primary border text-secondary fw-medium px-3 py-2">
+                                    {skill}
+                                </span>
+                            ))}
                         </div>
                     </div>
                 </div>
