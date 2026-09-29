@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Months | Monthly Moments{% endblock %}
+
+{% block body %}
+    <section class="intro">
+        <p class="eyebrow">The year at a glance</p>
+        <h1>Find a moment worth celebrating.</h1>
+        <p class="intro-copy">Choose a month to discover its featured challenge.</p>
+    </section>
+    <section class="month-grid" aria-label="Months">
+        {% for key, month_name in months.items %}
+        <a class="month-card" href="{% url 'month_details_num' forloop.counter %}">
+            <span class="month-number">{{ forloop.counter|stringformat:"02d" }}</span>
+            <span class="month-name">{{ month_name }}</span>
+            <span class="card-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+        {% empty %}
+        <p class="empty-state">No months available.</p>
+        {% endfor %}
+    </section>
+{% endblock %}

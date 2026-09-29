@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ author.name }} | Monthly Moments{% endblock %}
+
+{% block body %}
+    <article class="author-detail-panel">
+        <p class="eyebrow">Author profile</p>
+        <h1>{{ author.name }}</h1>
+        <p class="author-detail-copy">{{ author.details }}</p>
+
+        <section class="author-books" aria-labelledby="books-heading">
+            <h2 id="books-heading">Books by {{ author.name }}</h2>
+            <div class="book-detail-list">
+                {% for book in author.books %}
+                <div class="book-detail-item">
+                    <span class="book-number">{{ forloop.counter|stringformat:"02d" }}</span>
+                    <span>{{ book }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <a class="back-link" href="{% url 'authors' %}">&#8592; Back to all authors</a>
+    </article>
+{% endblock %}

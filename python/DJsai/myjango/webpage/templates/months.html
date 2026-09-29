@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{{month}} Details</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <h2>{{month}} Details</h2>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}{{ month }} challange{% endblock %}
+
+{% block body %}
+ <header class="site-header">
+        <a class="brand" href="{% url 'home' %}">Monthly Moments</a>
+        <nav aria-label="Main navigation">
+            <a href="{% url 'home' %}">Months</a>
+            <a href="{% url 'authors' %}">Authors</a>
+        </nav>
+    </header>
+        <article class="detail-panel">
+                <p class="eyebrow">Monthly challenge</p>
+                <h1>{{ month }} Details</h1>
+                <div class="challenge-box">
+                        <span class="challenge-label">This month's focus</span>
+                        <p>{{ challanges }}</p>
+                </div>
+                <a class="back-link" href="{% url 'home' %}">&#8592; Browse all months</a>
+        </article>
+
+         <footer class="site-footer">A small celebration for every month.</footer>
+{% endblock %}

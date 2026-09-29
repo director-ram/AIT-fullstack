@@ -1,28 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Details</title>
-    <style>
-        .head{
-            font-size: 25px;
-            text-align: center;
-            color: hsl(32, 100%, 50%);
-            text-shadow: 2px 2px 2px black;
-            text-decoration: underline;
-        }
-        .msg{
-            text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: larger;
-            color: aquamarine;
-            background-color: black;
-        }
-    </style>
-</head>
-<body>
-    <h1 class="head"> USER DETAILS</h1>
-    <p class="msg">Hi, welcome {{username}}</p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}{{ username }} | Monthly Moments{% endblock %}
+
+{% block body %}
+    <section class="profile-panel">
+        <div class="avatar" aria-hidden="true">{{ username|first|upper }}</div>
+        <p class="eyebrow">Member profile</p>
+        <h1>Welcome, {{ username }}.</h1>
+        <p class="profile-copy">Your place for discovering a fresh monthly challenge.</p>
+        <a class="back-link" href="{% url 'home' %}">Explore the months &#8594;</a>
+    </section>
+{% endblock %}

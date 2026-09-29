@@ -1,0 +1,8 @@
+.bg-hover-primary {
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.bg-hover-primary:hover {
+	background-color: var(--bs-primary) !important;
+	color: var(--bs-white) !important;
+}
