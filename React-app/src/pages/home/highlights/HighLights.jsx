@@ -1,13 +1,14 @@
 import { ProductCard } from "../../products/product/ProductCard";
-// import products from "../../utils/data"
+import products from "../../../utils/data"
 
-export const HighLights = ({products})=>{
-let productData = products;
+export const HighLights = ()=>{
 return(
 <>
-    {productData.map(product=>
-        <div className="product-list-item" key={product.id}>
-            <ProductCard name={product.name}
+<h2 className="text-center m-3 text-danger">Products</h2>
+    <div className="product-grid">
+        {products.map(product=>
+            <ProductCard key={product.id} 
+                    name={product.name}
                     brand={product.brand}
                     category={product.category}
                     price={product.price}
@@ -17,7 +18,7 @@ return(
                     inStock={product.inStock}
                     discount={product.discount}
         />
-        </div>
     )}
+    </div>
 </>)
 }
