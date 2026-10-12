@@ -5,6 +5,7 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { CartProvider } from './context/CartContext.jsx'
+// import App1 from './App1.jsx'
 
 const rootElement = document.getElementById('root')
 
@@ -13,9 +14,10 @@ if (!rootElement) {
 }
 
 createRoot(rootElement).render(
-    <BrowserRouter>
-      <CartProvider>
-        <App />
-      </CartProvider>
-    </BrowserRouter>,
+  <BrowserRouter>
+    <CartProvider>
+      <App />
+      {/* <App1 /> */}
+    </CartProvider>
+  </BrowserRouter>,
 )

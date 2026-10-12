@@ -10,6 +10,7 @@ function Header() {
     { label: "Profile Card", path: "/profilecards", id: 2 },
     { label: "Products", path: "/products", id: 3 },
     { label: "Cart", path: "/cart", id: 4 },
+    {label:'Practice', path:'/practice', id:5},
   ];
   return (
     <>

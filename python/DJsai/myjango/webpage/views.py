@@ -1,5 +1,5 @@
 from unicodedata import name
-
+from .models import Products
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect,HttpResponseNotFound,HttpResponseServerError
 
@@ -96,3 +96,7 @@ def month_details(request,month):
 
 def user_display(request,username):
     return render(request,"user.html",{"username":username})
+
+def products_view(request):
+    products = Products.objects.all()
+    return render(request, "products.html", {"products": products})
