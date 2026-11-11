@@ -685,7 +685,7 @@
 
 // Regex patterns
 
-// const userNamePattren = /^[A-Z][A-Za-z0-9]{1,}$/;
+// const userNamePattren = /^[A-Z][A-Za-z0-9]{3,}$/;
 // const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$*&%^!#?(/)])[A-Za-z\d\W]{8,}$/;
 // console.log(userNamePattren.test("Hemasai123"));
 // console.log(passwordPattern.test("Hema$123"));

@@ -11,6 +11,8 @@ function Header() {
     { label: "Products", path: "/products", id: 3 },
     { label: "Cart", path: "/cart", id: 4 },
     {label:'Practice', path:'/practice', id:5},
+    {label:'users',path:'/userlist',id:6},
+    {label:'sign up',path:'/signup',id:7},
   ];
   return (
     <>

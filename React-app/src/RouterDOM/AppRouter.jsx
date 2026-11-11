@@ -8,6 +8,7 @@ import Login from "../components/Authpage/Login";
 import SingleProduct from "../pages/products/product/singleProduct";
 import { Route, Routes } from "react-router-dom";
 import App1 from "../App1";
+import UserList from "../pages/userList/UserList";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -18,6 +19,7 @@ const routes = [
   { path: '/cart', element: <Cart /> },
   { path: "/signup", element: <SignUp /> },
   { path: "/login", element: <Login /> },
+  {path:"/userlist", element:<UserList/> },
   { path: "*", element: <h1>Not Found</h1> },
 ];
 

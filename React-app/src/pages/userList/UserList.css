@@ -1,0 +1,37 @@
+.container{
+    justify-content: center;
+}
+
+.user-table {
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.user-table th,
+.user-table td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+.phone-cell {
+    white-space: nowrap;
+}
+
+.dialog {
+    position: relative;
+}
+
+.dialog-header {
+    position: relative;
+    padding-right: 2rem;
+}
+
+.dialog-header .btn-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+}
+
+

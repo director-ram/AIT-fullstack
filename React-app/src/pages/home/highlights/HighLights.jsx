@@ -7,7 +7,8 @@ return(
 <h2 className="text-center m-3 text-danger">Products</h2>
     <div className="product-grid">
         {products.map(product=>
-            <ProductCard key={product.id} 
+            <ProductCard key={product.id}
+                    id={product.id} 
                     name={product.name}
                     brand={product.brand}
                     category={product.category}

@@ -1,7 +1,8 @@
 import './ProductCard.css'
 import { useCart } from '../../../context/CartContext'
+import { Link } from 'react-router-dom';
 
-export const ProductCard = ({ name, category, price, stock, inStock, image, discount, brand, rating }) => {
+export const ProductCard = ({ id,name, category, price, stock, inStock, image, discount, brand, rating }) => {
   const { addToCart } = useCart();
 
   const handleAddToCart = (e) => {
@@ -27,7 +28,8 @@ export const ProductCard = ({ name, category, price, stock, inStock, image, disc
         <p className={`product-card-stock ${inStock ? 'is-available' : 'is-sold-out'}`}>
           {inStock ? `${stock} in stock` : 'Out of stock'}
         </p>
-        <button type="button" className="product-card-button">View product</button>
+        {/* <button type="button" className="product-card-button">View product</button> */}
+        <Link to={`/products/${id}`} className='product-card-button text-center text-decoration-none'>View product</Link>
         <button type="button" className="product-card-button" onClick={handleAddToCart}>Add to Cart</button>
       </div>
     </article>
