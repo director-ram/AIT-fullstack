@@ -121,9 +121,7 @@ let handleChangePhone = useCallback((id, value) => {
                         type="button"
                         className="btn btn-solid btn-warning"
                         onClick={(event) =>
-                          event.currentTarget.nextElementSibling.showModal()
-                        }
-                      >
+                          event.currentTarget.nextElementSibling.showModal()}>
                         Edit
                       </button>
 

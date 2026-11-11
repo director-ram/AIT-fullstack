@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp() {
     let navigate = useNavigate();
+    const storageKey = "UserDetails"
+    let addedUserForm = JSON.parse(localStorage.getItem(storageKey) || "[]");
 
     let [form,setForm] = useState(
         {   userName:'',
@@ -50,8 +52,10 @@ export default function SignUp() {
         if(cnfPassword != password){
             return setErr(`password doesn't match`)
         }
+        addedUserForm.push(form)
+        localStorage.setItem(storageKey, JSON.stringify(addedUserForm))
         setTimeout(()=>{
-            navigate('/')
+            navigate('/login')
         },1000)
     }
 

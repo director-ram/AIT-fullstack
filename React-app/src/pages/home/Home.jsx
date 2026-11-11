@@ -1,4 +1,5 @@
 import Carousel from "../../components/carousel/Carousel.jsx"
+import Todo from "../../features/todo.jsx"
 import Counter from "../Counter/Counter.jsx"
 
 export const Home = () => {
@@ -18,5 +19,6 @@ export const Home = () => {
                 <Counter />
             </div>
         </div>
+        <div className="d-flex flex-column justify-center container text-center m-5 p-2"><Todo/></div>
     </>)
 }

@@ -9,6 +9,7 @@ import SingleProduct from "../pages/products/product/singleProduct";
 import { Route, Routes } from "react-router-dom";
 import App1 from "../App1";
 import UserList from "../pages/userList/UserList";
+import Todo from "../features/todo";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -20,6 +21,7 @@ const routes = [
   { path: "/signup", element: <SignUp /> },
   { path: "/login", element: <Login /> },
   {path:"/userlist", element:<UserList/> },
+  { path: "/todo", element: <Todo /> },
   { path: "*", element: <h1>Not Found</h1> },
 ];
 
