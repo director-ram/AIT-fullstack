@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 
 const tasksStorageKey = "todo-list";
 const completedStorageKey = "completed-todo-list";
@@ -33,6 +33,20 @@ function saveTasks(tasks, completedTasks) {
     sessionStorage.setItem(completedStorageKey, JSON.stringify(completedTasks));
 }
 
+function editReducer(state, action) {
+    switch (action.type) {
+        case "start":
+            return { id: action.id, text: action.text };
+        case "change":
+            return { ...state, text: action.text };
+        case "cancel":
+        case "save":
+            return { id: null, text: "" };
+        default:
+            return state;
+    }
+}
+
 export default function Todo() {
     const [tasks, setTasks] = useState(() => (
         readTasks(localStorage, tasksStorageKey)
@@ -42,6 +56,7 @@ export default function Todo() {
     ));
     const [taskText, setTaskText] = useState("");
     const [activeTab, setActiveTab] = useState("tasks");
+    const [editingTask, dispatchEdit] = useReducer(editReducer, { id: null, text: "" });
 
     function updateTaskLists(nextTasks, nextCompletedTasks) {
         setTasks(nextTasks);
@@ -85,6 +100,22 @@ export default function Todo() {
             tasks.filter(({ id }) => id !== taskId),
             completedTasks,
         );
+    }
+
+    function saveEdit() {
+        const text = editingTask.text.trim();
+
+        if (!text) {
+            return;
+        }
+
+        updateTaskLists(
+            tasks.map((task) => (
+                task.id === editingTask.id ? { ...task, text } : task
+            )),
+            completedTasks,
+        );
+        dispatchEdit({ type: "save" });
     }
 
     return (
@@ -140,9 +171,40 @@ export default function Todo() {
                             className="list-group-item d-flex justify-content-between align-items-center gap-3 py-3"
                             key={task.id}
                         >
-                            <span className={`text-break ${activeTab === "completed" ? "text-decoration-line-through text-body-secondary" : ""}`}>
-                                {task.text}
-                            </span>
+                            {editingTask.id === task.id ? (
+                                <span className="d-flex flex-grow-1 gap-2">
+                                    <input
+                                        className="form-control"
+                                        type="text"
+                                        value={editingTask.text}
+                                        onChange={(event) => dispatchEdit({
+                                            type: "change",
+                                            text: event.target.value,
+                                        })}
+                                    />
+                                    <button className="btn btn-sm btn-primary" type="button" onClick={saveEdit}>
+                                        Save
+                                    </button>
+                                    <button
+                                        className="btn btn-sm btn-secondary"
+                                        type="button"
+                                        onClick={() => dispatchEdit({ type: "cancel" })}
+                                    >
+                                        Cancel
+                                    </button>
+                                </span>
+                            ) : (
+                                <span
+                                    className={`text-break ${activeTab === "completed" ? "text-decoration-line-through text-body-secondary" : ""}`}
+                                    onClick={() => activeTab === "tasks" && dispatchEdit({
+                                        type: "start",
+                                        id: task.id,
+                                        text: task.text,
+                                    })}
+                                >
+                                    {task.text}
+                                </span>
+                            )}
                             {activeTab === "tasks" && (
                                 <span className="d-flex gap-2">
                                     <button
@@ -167,7 +229,7 @@ export default function Todo() {
                     ))}
                     {(activeTab === "tasks" ? tasks : completedTasks).length === 0 && (
                         <div className="alert alert-light border text-center mb-0">
-                            No {activeTab} tasks yet.
+                            No {activeTab} yet.
                         </div>
                     )}
                         </div>

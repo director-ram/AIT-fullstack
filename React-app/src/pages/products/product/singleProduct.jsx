@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom";
 
 export default function SingleProduct() {
-
     let {id} = useParams()
 
     const [singleProduct,setSingleProduct] = useState({});
@@ -20,6 +19,7 @@ export default function SingleProduct() {
   return (
     <>
     <div className="container my-5">
+        <Link to="/products" className="btn border-info p-2 ">⬅️</Link>
         <div className="row">
 
             <div className="col-4">
