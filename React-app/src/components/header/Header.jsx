@@ -8,11 +8,11 @@ function Header() {
   const NavLinks = [
     { label: "Home", path: "/", id: 1 },
     { label: "Profile Card", path: "/profilecards", id: 2 },
-    { label: "Products", path: "/products", id: 3 },
-    { label: "Cart", path: "/cart", id: 4 },
-    {label:'Practice', path:'/practice', id:5},
-    {label:'users',path:'/userlist',id:6},
-    {label:'sign up',path:'/signup',id:7},
+    { label: "Cart", path: "/cart", id: 3},
+    {label:'Products', path:'/practice', id:4},
+    {label:'Users',path:'/userlist',id:5},
+    {label:'Sign up',path:'/signup',id:6},
+    {label:'Dashboard', path:'/dashboard',id:7},
   ];
   return (
     <>

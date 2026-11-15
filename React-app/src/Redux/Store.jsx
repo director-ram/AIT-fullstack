@@ -1,3 +1,3 @@
 import { configureStore } from "@reduxjs/toolkit";
-import countOperation from './CounterSlice'
-export default configureStore({reducer:{count:countOperation}})
+import cartOper from "./CartSlice"
+export default configureStore({reducer:{cart:cartOper}})

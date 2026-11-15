@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {useLocalUser} from "../../customHooks/userData/LocalUser"
 
 export default function SignUp() {
     let navigate = useNavigate();
     const storageKey = "UserDetails"
     let addedUserForm = JSON.parse(localStorage.getItem(storageKey) || "[]");
+    let {addUser} = useLocalUser()
 
     let [form,setForm] = useState(
         {   userName:'',
@@ -52,6 +54,7 @@ export default function SignUp() {
         if(cnfPassword != password){
             return setErr(`password doesn't match`)
         }
+        addUser({userName,email,mobile,password})
         addedUserForm.push(form)
         localStorage.setItem(storageKey, JSON.stringify(addedUserForm))
         setTimeout(()=>{

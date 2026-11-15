@@ -1,4 +1,4 @@
-// import { useRoutes } from "react-router-dom"
+import { useRoutes } from "react-router-dom"
 import { Home } from "../pages/home/Home"
 import { HighLights } from "../pages/home/highlights/HighLights"
 import ProfileCard from "../components/ProfileCard"
@@ -6,10 +6,12 @@ import Cart from "../pages/cart/Cart";
 import SignUp from "../components/Authpage/SignUp";
 import Login from "../components/Authpage/Login";
 import SingleProduct from "../pages/products/product/singleProduct";
-import { Route, Routes } from "react-router-dom";
+// import { Route, Routes } from "react-router-dom";
 import App1 from "../App1";
 import UserList from "../pages/userList/UserList";
 import Todo from "../features/todo";
+import {CartItems} from "../Redux/CartItems";
+import { Dashboard } from "../customHooks/Dashboard";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -21,20 +23,12 @@ const routes = [
   { path: "/signup", element: <SignUp /> },
   { path: "/login", element: <Login /> },
   {path:"/userlist", element:<UserList/> },
+  {path:"/cartitems", element:<CartItems/>},
   { path: "/todo", element: <Todo /> },
+  {path:'/dashboard',element:<Dashboard/>},
   { path: "*", element: <h1>Not Found</h1> },
 ];
 
 export const AppRouter = () => {
-  return (
-    <>
-    <Routes>
-
-       { routes.map(route=>(
-        <Route path={route.path} element={route.element}/>
-       ))}
-
-    </Routes>
-    </>
-  )
+  return useRoutes(routes)
 };

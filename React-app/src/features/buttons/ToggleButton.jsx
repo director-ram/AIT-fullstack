@@ -6,8 +6,8 @@ export const ToggleButton = () => {
   return (
     <>
       <div className="container-fluid" style={{ height: "100vh" }}>
-        <div className={`h-100 ${theme == 'light' ? 'bg-dark':'bg-light'}`}>
-          <button className="btn btn-primary border-success" 
+        <div className={`h-100 ${theme == 'light' ? 'bg-dark':'bg-light'} rounded`}>
+          <button className="btn btn-primary border-success text-center" 
           onClick={()=>updatedTheme(theme == 'light' ? 'dark':'light')}>
             {theme == 'light' ? 'Light' : 'Dark'}
             </button>
