@@ -27,13 +27,8 @@ export const CartItems = () => {
                   />
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{product.title}</h5>
-                    <p className="card-text text-secondary">
-                      {product.description.length >= 20
-                        ? product.description.slice(0, 20) + "..."
-                        : product.description}
-                    </p>
                     <p className="fs-5 fw-bold text-success mb-3">
-                      ₹{(product.price * 94.198).toFixed(2)}
+                      ₹{(Number(product.price) * 94.198).toFixed(2).toLocaleString('en-IN')}
                     </p>
                     <div className="d-flex align-items-center mt-auto text-center">
                       <button className="btn btn-info me-2" onClick={()=>dispatch(DECQnty(product))}>-</button>
