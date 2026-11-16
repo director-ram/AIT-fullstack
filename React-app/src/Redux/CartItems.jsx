@@ -5,7 +5,7 @@ import { DECQnty, INCQnty, RemoveFromCart } from "./CartSlice";
 export const CartItems = () => {
   let cartData = useSelector((state) => state.cart);
   let dispatch = useDispatch()
-  let totalPrice = cartData.reduce((total, product) => total + Number(product.price) * product.quantity,0);
+  let totalPrice = cartData.reduce((total, product) => total + Number(product.price) * product.quantity * 94.198,0);
   
   return (
     <>
@@ -33,7 +33,7 @@ export const CartItems = () => {
                         : product.description}
                     </p>
                     <p className="fs-5 fw-bold text-success mb-3">
-                      ₹{product.price}
+                      ₹{(product.price * 94.198).toFixed(2)}
                     </p>
                     <div className="d-flex align-items-center mt-auto text-center">
                       <button className="btn btn-info me-2" onClick={()=>dispatch(DECQnty(product))}>-</button>

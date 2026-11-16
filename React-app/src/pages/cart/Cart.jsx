@@ -8,7 +8,7 @@ const Cart = () => {
     // const { cartItems, removeFromCart } = useCart();
     let cartData = useSelector((state) => state.cart);
     let dispatch = useDispatch();
-    let totalPrice = cartData.reduce((total, product) => total + Number(product.price) * product.quantity,0);
+    let totalPrice = cartData.reduce((total, product) => total + Number(product.price) * product.quantity * 94.198,0);
 
     return (
         <div>
@@ -42,7 +42,7 @@ const Cart = () => {
                                             </td>
                                             <td>{item.title}</td>
                                             <td>{item.quantity}</td>
-                                            <td>₹{item.price.toLocaleString('en-IN')}</td>
+                                            <td>₹{(item.price.toLocaleString('en-IN')*94.198).toFixed(2)}</td>
                                             <td><button className="btn btn-sm m-1 btn-outline-info" onClick={()=>dispatch(INCQnty(item))}>+</button>
                                                 <button className="btn btn-sm m-1 btn-outline-warning" onClick={()=>dispatch(DECQnty(item))}>-</button>
                                                 <button className="btn btn-sm m-1 btn-outline-danger" onClick={() => dispatch(RemoveFromCart(item.id))}>Remove</button>
@@ -52,7 +52,7 @@ const Cart = () => {
                                 )}
                             </tbody>
                         </table>
-                        <center><h5 className="fs-2 text-center text-danger my-2">Total: ₹{totalPrice.toLocaleString('en-IN')}</h5></center>
+                        <center><h5 className="fs-2 text-center text-danger my-2">Total: ₹{totalPrice.toFixed(2)}</h5></center>
                     </div>
                 </div>
             </div>
