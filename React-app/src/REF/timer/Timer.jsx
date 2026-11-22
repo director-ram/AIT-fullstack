@@ -13,8 +13,10 @@ export const Timer = () => {
     }
 
     function onStop() {
-        clearInterval(timerRef.current)
-        timerRef.current = null
+        if(timerRef.current !== null){
+            clearInterval(timerRef.current)
+            timerRef.current = null
+        }
     }
 
     function onReset(){

@@ -1,6 +1,7 @@
 // useRef stores a mutable value that persists
 // between renders without causing a re-render when it changes.
 
+import { useCallback } from "react"
 import { useEffect } from "react"
 import { useRef } from "react"
 
@@ -11,7 +12,7 @@ export const Ref = ()=>{
         refer.current.focus()
     })
 
-    let playv = ()=>refer.current.play()
+    let playv = useCallback(()=>refer.current.play(),[])
     let pausev = ()=>refer.current.pause()
     return(<>
         <div className="col-5">

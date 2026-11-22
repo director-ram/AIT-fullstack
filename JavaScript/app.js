@@ -751,6 +751,8 @@
 
 // lexical scoping
 
+// lexical scoping looks for the function is created not where the function was called
+
 // let name = "Hemasai";
 
 // function greet() {
@@ -761,6 +763,7 @@
 // function test() {
 //     let name = "world";
 //     greet();
+//     console.log(name)
 // }
 
 // test();
@@ -768,6 +771,8 @@
 
 
 // clousers
+
+// a closure is a function that remembers the variables from the outer function where it was created, even after that outer function has finished running
 
 // function createCounter() {
 //     let count = 0;
