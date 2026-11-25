@@ -73,7 +73,7 @@ export default function ApiCart() {
     <>
       <center>
         <h2 className="my-3 text-primary text-decoration-underline">
-          Sample Products
+          Products
         </h2>
       </center>
 
@@ -123,8 +123,8 @@ export default function ApiCart() {
                 key={product.id}
                 initial={{opacity:0, scale:0.6}}
                 animate={{opacity:1, scale:1}}
-                exit={{opacity:1,scale:0.6}}
-                transition={{duration:1,delay:i* 0.5,ease:"easeOut"}}>
+                exit={{opacity:1,scale:1}}
+                transition={{duration:0.5,delay:i* 0.2,ease:"easeOut"}}>
                 <Link className="nav-link" key={i} to={`/products/${product.id}`} >
                 <img src={product.thumbnail} height={'200px'} />
                 <h2>{product.title}</h2>
