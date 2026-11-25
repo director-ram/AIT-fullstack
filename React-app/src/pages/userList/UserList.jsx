@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useMemo } from "react";
 import { useState } from "react";
 import "./UserList.css";
+import Loader from "../../components/Loaders/Loader";
 
 export default function UserList() {
   let [users, setUsers] = useState([]);
@@ -109,7 +110,7 @@ let handleChangePhone = useCallback((id, value) => {
                 </tr>
               </thead>
               <tbody className="border border-2 rounded">
-                {filterData.map((users) => (
+                {filterData.length > 0 ? filterData.map((users) => (
                   <tr className="border border-2 rounded" key={users.id}>
                     <td>{users.id}</td>
                     <td>{users.firstName}</td>
@@ -169,7 +170,7 @@ let handleChangePhone = useCallback((id, value) => {
                       <button className="btn btn-danger" onClick={()=>handleDelete(users.id)}>Delete</button>
                     </td>
                   </tr>
-                ))}
+                )): <Loader/>}
               </tbody>
             </table>
           </div>
